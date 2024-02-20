@@ -57,6 +57,11 @@ Feature: Gilded Rose quality
     Then I should get item as "Backstage passes to a TAFKAL80ETC concert" and quality 0 and sellIn is -1
 
   Scenario: Checking Backstage keeps maximum quality
+    Given The item as "Backstage passes to a TAFKAL80ETC concert" with a quality of 49 and 3 days left to sell
+    When I update the quality
+    Then I should get item as "Backstage passes to a TAFKAL80ETC concert" and quality 50 and sellIn is 2
+
+  Scenario: Checking Backstage keeps maximum quality
     Given The item as "Backstage passes to a TAFKAL80ETC concert" with a quality of 50 and 3 days left to sell
     When I update the quality
     Then I should get item as "Backstage passes to a TAFKAL80ETC concert" and quality 50 and sellIn is 2

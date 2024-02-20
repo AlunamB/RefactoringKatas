@@ -34,12 +34,10 @@ public class GildedRose {
   }
 
   private void updateItemQualityOfNormalItem(int i) {
-    if (hasPositiveQualityValue(i)) {
-      if (hasPassedSellIn(i)) {
-        changeItemQualityBy(i, NORMAL_ITEM_QUALITY_DECREASE * SELLIN_PASSED_QUALITY_CHANGE_FACTOR);
-      } else {
-        changeItemQualityBy(i, NORMAL_ITEM_QUALITY_DECREASE);
-      }
+    if (hasPassedSellIn(i)) {
+      changeItemQualityBy(i, NORMAL_ITEM_QUALITY_DECREASE * SELLIN_PASSED_QUALITY_CHANGE_FACTOR);
+    } else {
+      changeItemQualityBy(i, NORMAL_ITEM_QUALITY_DECREASE);
     }
   }
 
@@ -70,6 +68,10 @@ public class GildedRose {
     items[itemIndex].quality = MIN_ITEM_QUALITY;
   }
 
+  private void setQualityToMaximum(int itemIndex) {
+    items[itemIndex].quality = MAX_ITEM_QUALITY_NON_LEGENDARY;
+  }
+
   private boolean isNormalItem(int i) {
     return !isAgedBrie(i) && !isBackstagePass(i);
   }
@@ -94,13 +96,24 @@ public class GildedRose {
     if (items[itemIndex].quality < MAX_ITEM_QUALITY_NON_LEGENDARY) {
       items[itemIndex].quality = items[itemIndex].quality + addedToCurrentQuality;
     }
+    if (hasExceededMaxQuality(itemIndex)) {
+      setQualityToMaximum(itemIndex);
+    }
+
+    if (hasNegativeQualityValue(itemIndex)) {
+      setQualityToMinimum(itemIndex);
+    }
+  }
+
+  private boolean hasExceededMaxQuality(int itemIndex) {
+    return items[itemIndex].quality > 50;
   }
 
   private boolean hasPassedSellIn(int itemIndex) {
     return items[itemIndex].sellIn < 0;
   }
 
-  private boolean hasPositiveQualityValue(int itemIndex) {
-    return items[itemIndex].quality > 0;
+  private boolean hasNegativeQualityValue(int itemIndex) {
+    return items[itemIndex].quality < 0;
   }
 }
