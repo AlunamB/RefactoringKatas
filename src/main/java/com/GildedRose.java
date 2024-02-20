@@ -8,6 +8,7 @@ public class GildedRose {
   public static final int NORMAL_ITEM_QUALITY_INCREASE = 1;
   public static final int NORMAL_ITEM_QUALITY_DECREASE = -1;
   public static final int SELLIN_PASSED_QUALITY_CHANGE_FACTOR = 2;
+  public static final int CONJURED_ITEM_CHANGE_FACTOR = 2;
   public static final int BACKSTAGE_PASS_DOUBLE_QUALITY_INCREASE = 2;
   public static final int BACKSTAGE_PASS_TRIPLE_QUALITY_INCREASE = 3;
 
@@ -29,6 +30,8 @@ public class GildedRose {
         updateItemQualityOfBackstagePass(i);
       } else if (isAgedBrie(i)) {
         updateItemQualityOfAgedBrie(i);
+      } else if (isConjuredItem(i)) {
+        updateItemQualityOfConjuredItem(i);
       }
     }
   }
@@ -38,6 +41,18 @@ public class GildedRose {
       changeItemQualityBy(i, NORMAL_ITEM_QUALITY_DECREASE * SELLIN_PASSED_QUALITY_CHANGE_FACTOR);
     } else {
       changeItemQualityBy(i, NORMAL_ITEM_QUALITY_DECREASE);
+    }
+  }
+
+  private void updateItemQualityOfConjuredItem(int i) {
+    if (hasPassedSellIn(i)) {
+      changeItemQualityBy(
+          i,
+          NORMAL_ITEM_QUALITY_DECREASE
+              * SELLIN_PASSED_QUALITY_CHANGE_FACTOR
+              * CONJURED_ITEM_CHANGE_FACTOR);
+    } else {
+      changeItemQualityBy(i, NORMAL_ITEM_QUALITY_DECREASE * CONJURED_ITEM_CHANGE_FACTOR);
     }
   }
 
@@ -72,16 +87,20 @@ public class GildedRose {
     items[itemIndex].quality = MAX_ITEM_QUALITY_NON_LEGENDARY;
   }
 
-  private boolean isNormalItem(int i) {
-    return !isAgedBrie(i) && !isBackstagePass(i);
+  private boolean isNormalItem(int itemIndex) {
+    return !isAgedBrie(itemIndex) && !isBackstagePass(itemIndex) && !isConjuredItem(itemIndex);
   }
 
-  private boolean isAgedBrie(int i) {
-    return items[i].name.equals("Aged Brie");
+  private boolean isAgedBrie(int itemIndex) {
+    return items[itemIndex].name.equals("Aged Brie");
   }
 
   private boolean isBackstagePass(int itemIndex) {
     return items[itemIndex].name.startsWith("Backstage passes");
+  }
+
+  private boolean isConjuredItem(int itemIndex) {
+    return items[itemIndex].name.startsWith("Conjured");
   }
 
   private void decreaseSellInValue(int itemIndex) {

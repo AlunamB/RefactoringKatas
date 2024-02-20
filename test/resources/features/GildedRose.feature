@@ -75,3 +75,13 @@ Feature: Gilded Rose quality
     Given The item as "Elixir of the Mongoose" with a quality of 7 and 0 days left to sell
     When I update the quality
     Then I should get item as "Elixir of the Mongoose" and quality 5 and sellIn is -1
+
+  Scenario: Checking conjured item elixir BEFORE SellIn passed
+    Given The item as "Conjured Mana Cake" with a quality of 6 and 3 days left to sell
+    When I update the quality
+    Then I should get item as "Conjured Mana Cake" and quality 4 and sellIn is 2
+
+  Scenario: Checking conjured item elixir and SellIn PASSED
+    Given The item as "Conjured Mana Cake" with a quality of 6 and 0 days left to sell
+    When I update the quality
+    Then I should get item as "Conjured Mana Cake" and quality 2 and sellIn is -1
