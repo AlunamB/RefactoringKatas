@@ -24,24 +24,25 @@ public class GildedRose {
       decreaseSellInValue(i);
 
       if (isNormalItem(i)) {
-        if (hasPositiveQualityValue(i)) {
-          changeItemQualityBy(i, NORMAL_ITEM_QUALITY_DECREASE);
-        }
+        updateItemQualityOfNormalItem(i);
       } else if (isBackstagePass(i)) {
-        updateBackstagePass(i);
+        updateItemQualityOfBackstagePass(i);
       } else if (isAgedBrie(i)) {
-        updateAgedBrie(i);
-      }
-
-      if (hasPassedSellIn(i) && isNormalItem(i)) {
-        if (hasPositiveQualityValue(i)) {
-          changeItemQualityBy(i, NORMAL_ITEM_QUALITY_DECREASE);
-        }
+        updateItemQualityOfAgedBrie(i);
       }
     }
   }
 
-  private void updateAgedBrie(int i) {
+  private void updateItemQualityOfNormalItem(int i) {
+    if (hasPositiveQualityValue(i)) {
+      changeItemQualityBy(i, NORMAL_ITEM_QUALITY_DECREASE);
+      if (hasPassedSellIn(i)) {
+        changeItemQualityBy(i, NORMAL_ITEM_QUALITY_DECREASE);
+      }
+    }
+  }
+
+  private void updateItemQualityOfAgedBrie(int i) {
 
     if (hasPassedSellIn(i)) {
       changeItemQualityBy(i, NORMAL_ITEM_QUALITY_INCREASE * SELLIN_PASSED_QUALITY_CHANGE_FACTOR);
@@ -50,7 +51,7 @@ public class GildedRose {
     }
   }
 
-  private void updateBackstagePass(int itemIndex) {
+  private void updateItemQualityOfBackstagePass(int itemIndex) {
     if (hasPassedSellIn(itemIndex)) {
       setQualityToMinimum(itemIndex);
     } else {
