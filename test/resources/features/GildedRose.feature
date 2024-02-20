@@ -11,6 +11,11 @@ Feature: Gilded Rose quality
     When I update the quality
     Then I should get item as "Aged Brie" and quality 7 and sellIn is -1
 
+  Scenario: Checking Aged Brie keeps maximum quality
+    Given The item as "Aged Brie" with a quality of 50 and 5 days left to sell
+    When I update the quality
+    Then I should get item as "Aged Brie" and quality 50 and sellIn is 4
+
   Scenario: Checking Sulfuras and SellIn PASSED
     Given The item as "Sulfuras, Hand of Ragnaros" with a quality of 80 and 5 days left to sell
     When I update the quality
@@ -50,6 +55,11 @@ Feature: Gilded Rose quality
     Given The item as "Backstage passes to a TAFKAL80ETC concert" with a quality of 20 and 0 days left to sell
     When I update the quality
     Then I should get item as "Backstage passes to a TAFKAL80ETC concert" and quality 0 and sellIn is -1
+
+  Scenario: Checking Backstage keeps maximum quality
+    Given The item as "Backstage passes to a TAFKAL80ETC concert" with a quality of 50 and 3 days left to sell
+    When I update the quality
+    Then I should get item as "Backstage passes to a TAFKAL80ETC concert" and quality 50 and sellIn is 2
 
   Scenario: Checking normal item elixir BEFORE SellIn passed
     Given The item as "Elixir of the Mongoose" with a quality of 7 and 5 days left to sell
