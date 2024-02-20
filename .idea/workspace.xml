@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf730673-cd2e-4188-b992-c92b9c87917f" name="Changes" comment="tests written and running">
+    <list default="true" id="cf730673-cd2e-4188-b992-c92b9c87917f" name="Changes" comment="improved item names to a less strict naming convention">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/GildedRose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/GildedRose.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/resources/features/GildedRose.feature" beforeDir="false" afterPath="$PROJECT_DIR$/test/resources/features/GildedRose.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,22 +38,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ManuelaBarth/GildedRose/test/java/com/gildedrose&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "true",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/ManuelaBarth/GildedRose/test/java/com/gildedrose",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ManuelaBarth\GildedRose\test\java\com\gildedrose" />
@@ -61,7 +63,7 @@
       <recent name="C:\Users\ManuelaBarth\GildedRose\src\main\java\com" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Feature: GildedRose">
+  <component name="RunManager" selected="Cucumber Java.Scenario: Checking Aged Brie SellIn PASSED">
     <configuration name="TexttestFixture" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.java.com.TexttestFixture" />
       <module name="GildedRose" />
@@ -94,15 +96,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Checking Aged Brie before SellIn passed" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Checking Aged Brie SellIn PASSED" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/test/resources/features/GildedRose.feature" />
       <option name="GLUE" value="com.gildedrose" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="GildedRose" />
-      <option name="NAME_FILTER" value="^Checking Aged Brie before SellIn passed$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Checking Aged Brie before SellIn passed$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Checking Aged Brie before SellIn passed" />
+      <option name="NAME_FILTER" value="^Checking Aged Brie SellIn PASSED$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Checking Aged Brie SellIn PASSED$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Checking Aged Brie SellIn PASSED" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -114,15 +116,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: Checking foo" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Checking Aged Brie before SellIn passed" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/test/resources/features/GildedRose.feature" />
       <option name="GLUE" value="com.gildedrose" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="GildedRose" />
-      <option name="NAME_FILTER" value="^Checking foo$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Checking foo$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Checking foo" />
+      <option name="NAME_FILTER" value="^Checking Aged Brie before SellIn passed$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Checking Aged Brie before SellIn passed$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Checking Aged Brie before SellIn passed" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -152,18 +154,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.TexttestFixture" />
+      <item itemvalue="Cucumber Java.Scenario: Checking Aged Brie SellIn PASSED" />
       <item itemvalue="Cucumber Java.Scenario: Checking Aged Brie before SellIn passed" />
-      <item itemvalue="Cucumber Java.Scenario: Checking foo" />
       <item itemvalue="Cucumber Java.Feature: GildedRose" />
       <item itemvalue="JUnit.RunCucumberTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Cucumber Java.Feature: GildedRose" />
+        <item itemvalue="Cucumber Java.Scenario: Checking Aged Brie SellIn PASSED" />
         <item itemvalue="JUnit.RunCucumberTest" />
         <item itemvalue="Application.TexttestFixture" />
         <item itemvalue="Cucumber Java.Scenario: Checking Aged Brie before SellIn passed" />
-        <item itemvalue="Cucumber Java.Scenario: Checking foo" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +199,91 @@
       <option name="project" value="LOCAL" />
       <updated>1708417351072</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="refactoring GildedRose.java: extracted methods, removed most magic numbers, moved sellInUpdate to method start">
+      <created>1708418608519</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1708418608519</updated>
+    </task>
+    <task id="LOCAL-00005" summary="refactoring GildedRose.java: cleaned legendary item case">
+      <created>1708420772170</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1708420772170</updated>
+    </task>
+    <task id="LOCAL-00006" summary="refactoring GildedRose.java: cleaned legendary item case">
+      <created>1708421023181</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1708421023181</updated>
+    </task>
+    <task id="LOCAL-00007" summary="extracted backstage pass update">
+      <created>1708421978601</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1708421978601</updated>
+    </task>
+    <task id="LOCAL-00008" summary="cleaned updateBackstagePass method">
+      <created>1708422673252</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1708422673252</updated>
+    </task>
+    <task id="LOCAL-00009" summary="cleaned updateBackstagePass method and extended tests">
+      <created>1708423193161</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1708423193161</updated>
+    </task>
+    <task id="LOCAL-00010" summary="rectored updateAgedBrie and added test cases for max quality">
+      <created>1708425746131</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1708425746131</updated>
+    </task>
+    <task id="LOCAL-00011" summary="moved all normal item updates together and renamed updateItem methods in a similar way">
+      <created>1708426026608</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1708426026608</updated>
+    </task>
+    <task id="LOCAL-00012" summary="moved all normal item updates together and renamed updateItem methods in a similar way">
+      <created>1708426076747</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1708426076747</updated>
+    </task>
+    <task id="LOCAL-00013" summary="improved updateItemQualityOfNormalItem">
+      <created>1708426436762</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1708426436762</updated>
+    </task>
+    <task id="LOCAL-00014" summary="consolidated and fixed min &amp; max quality checks">
+      <created>1708427077385</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1708427077385</updated>
+    </task>
+    <task id="LOCAL-00015" summary="improved item names to a less strict naming convention">
+      <created>1708434025462</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1708434025462</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -213,9 +299,22 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="initial setup" />
     <MESSAGE value="most important files (initial state)" />
     <MESSAGE value="tests written and running" />
-    <option name="LAST_COMMIT_MESSAGE" value="tests written and running" />
+    <MESSAGE value="refactoring GildedRose.java: extracted methods, removed most magic numbers, moved sellInUpdate to method start" />
+    <MESSAGE value="refactoring GildedRose.java: cleaned legendary item case" />
+    <MESSAGE value="extracted backstage pass update" />
+    <MESSAGE value="cleaned updateBackstagePass method" />
+    <MESSAGE value="cleaned updateBackstagePass method and extended tests" />
+    <MESSAGE value="rectored updateAgedBrie and added test cases for max quality" />
+    <MESSAGE value="moved all normal item updates together and renamed updateItem methods in a similar way" />
+    <MESSAGE value="improved updateItemQualityOfNormalItem" />
+    <MESSAGE value="consolidated and fixed min &amp; max quality checks" />
+    <MESSAGE value="improved item names to a less strict naming convention" />
+    <option name="LAST_COMMIT_MESSAGE" value="improved item names to a less strict naming convention" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
