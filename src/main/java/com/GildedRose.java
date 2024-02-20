@@ -7,6 +7,8 @@ public class GildedRose {
   public static final int MIN_ITEM_QUALITY = 0;
   public static final int NORMAL_ITEM_QUALITY_INCREASE = 1;
   public static final int NORMAL_ITEM_QUALITY_DECREASE = -1;
+  public static final int BACKSTAGE_PASS_DOUBLE_QUALITY_INCREASE = 2;
+  public static final int BACKSTAGE_PASS_TRIPLE_QUALITY_INCREASE = 3;
 
   public GildedRose(Item[] items) {
     this.items = items;
@@ -32,6 +34,7 @@ public class GildedRose {
         }
       }
 
+
       if (hasPassedSellIn(i)) {
         if (!isAgedBrie(i)) {
           if (hasPositiveQualityValue(i)) {
@@ -48,24 +51,22 @@ public class GildedRose {
 
   private void updateBackstagePass(int itemIndex) {
     if (hasPassedSellIn(itemIndex)) {
-      items[itemIndex].quality = MIN_ITEM_QUALITY;
+      setQualityToMinimum(itemIndex);
     } else {
-
       if (items[itemIndex].quality < MAX_ITEM_QUALITY_NON_LEGENDARY) {
-        changeItemQualityBy(itemIndex, NORMAL_ITEM_QUALITY_INCREASE);
-      }
-      if (items[itemIndex].sellIn < 10) {
-        if (items[itemIndex].quality < MAX_ITEM_QUALITY_NON_LEGENDARY) {
+        if (items[itemIndex].sellIn >= 10) {
           changeItemQualityBy(itemIndex, NORMAL_ITEM_QUALITY_INCREASE);
-        }
-      }
-
-      if (items[itemIndex].sellIn < 5) {
-        if (items[itemIndex].quality < MAX_ITEM_QUALITY_NON_LEGENDARY) {
-          changeItemQualityBy(itemIndex, NORMAL_ITEM_QUALITY_INCREASE);
+        } else if (items[itemIndex].sellIn <= 9 && items[itemIndex].sellIn >= 5) {
+          changeItemQualityBy(itemIndex, BACKSTAGE_PASS_DOUBLE_QUALITY_INCREASE);
+        } else if (items[itemIndex].sellIn < 5) {
+          changeItemQualityBy(itemIndex, BACKSTAGE_PASS_TRIPLE_QUALITY_INCREASE);
         }
       }
     }
+  }
+
+  private void setQualityToMinimum(int itemIndex) {
+    items[itemIndex].quality = MIN_ITEM_QUALITY;
   }
 
   private boolean isNormalItem(int i) {
