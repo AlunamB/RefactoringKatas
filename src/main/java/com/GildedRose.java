@@ -24,39 +24,45 @@ public class GildedRose {
         if (hasPositiveQualityValue(i)) {
           changeItemQualityBy(i, NORMAL_ITEM_QUALITY_DECREASE);
         }
+      } else if (isBackstagePass(i)) {
+        updateBackstagePass(i);
       } else {
         if (items[i].quality < MAX_ITEM_QUALITY_NON_LEGENDARY) {
           changeItemQualityBy(i, NORMAL_ITEM_QUALITY_INCREASE);
-
-          if (isBackstagePass(i)) {
-            if (items[i].sellIn < 10) {
-              if (items[i].quality < MAX_ITEM_QUALITY_NON_LEGENDARY) {
-                changeItemQualityBy(i, NORMAL_ITEM_QUALITY_INCREASE);
-              }
-            }
-
-            if (items[i].sellIn < 5) {
-              if (items[i].quality < MAX_ITEM_QUALITY_NON_LEGENDARY) {
-                changeItemQualityBy(i, NORMAL_ITEM_QUALITY_INCREASE);
-              }
-            }
-          }
         }
       }
 
       if (hasPassedSellIn(i)) {
         if (!isAgedBrie(i)) {
-          if (!isBackstagePass(i)) {
-            if (hasPositiveQualityValue(i)) {
-                changeItemQualityBy(i, NORMAL_ITEM_QUALITY_DECREASE);
-            }
-          } else {
-            items[i].quality = MIN_ITEM_QUALITY;
+          if (hasPositiveQualityValue(i)) {
+            changeItemQualityBy(i, NORMAL_ITEM_QUALITY_DECREASE);
           }
         } else {
           if (items[i].quality < MAX_ITEM_QUALITY_NON_LEGENDARY) {
             changeItemQualityBy(i, NORMAL_ITEM_QUALITY_INCREASE);
           }
+        }
+      }
+    }
+  }
+
+  private void updateBackstagePass(int itemIndex) {
+    if (hasPassedSellIn(itemIndex)) {
+      items[itemIndex].quality = MIN_ITEM_QUALITY;
+    } else {
+
+      if (items[itemIndex].quality < MAX_ITEM_QUALITY_NON_LEGENDARY) {
+        changeItemQualityBy(itemIndex, NORMAL_ITEM_QUALITY_INCREASE);
+      }
+      if (items[itemIndex].sellIn < 10) {
+        if (items[itemIndex].quality < MAX_ITEM_QUALITY_NON_LEGENDARY) {
+          changeItemQualityBy(itemIndex, NORMAL_ITEM_QUALITY_INCREASE);
+        }
+      }
+
+      if (items[itemIndex].sellIn < 5) {
+        if (items[itemIndex].quality < MAX_ITEM_QUALITY_NON_LEGENDARY) {
+          changeItemQualityBy(itemIndex, NORMAL_ITEM_QUALITY_INCREASE);
         }
       }
     }
