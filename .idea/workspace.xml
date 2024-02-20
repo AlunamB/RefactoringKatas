@@ -4,59 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf730673-cd2e-4188-b992-c92b9c87917f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/google-java-format.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/io_cucumber_java.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/io_cucumber_junit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GildedRose.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.1.2-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/apiguardian-api-1.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ci-environment-10.0.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/ci-environment-10.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/cucumber-core-7.15.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/cucumber-core-7.15.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/cucumber-expressions-17.0.1-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/cucumber-expressions-17.0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/cucumber-gherkin-7.15.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/cucumber-gherkin-7.15.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/cucumber-gherkin-messages-7.15.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/cucumber-gherkin-messages-7.15.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/cucumber-java-7.15.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/cucumber-java-7.15.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/cucumber-junit-7.15.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/cucumber-junit-7.15.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/cucumber-plugin-7.15.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/cucumber-plugin-7.15.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/datatable-7.15.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/datatable-7.15.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/docstring-7.15.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/docstring-7.15.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/gherkin-26.2.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/gherkin-26.2.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/hamcrest-core-1.3-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/hamcrest-core-1.3.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/html-formatter-20.4.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/html-formatter-20.4.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-4.13.2-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-4.13.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-xml-formatter-0.2.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/junit-xml-formatter-0.2.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/messages-22.0.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/messages-22.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/tag-expressions-6.0.0-javadoc.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/tag-expressions-6.0.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/GildedRose.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/TexttestFixture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/java/com/gildedrose/RunCucumberTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/java/com/gildedrose/StepDefs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/resources/features/GildedRose.feature" afterDir="false" />
+    <list default="true" id="cf730673-cd2e-4188-b992-c92b9c87917f" name="Changes" comment="most important files (initial state)">
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/GildedRose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/GildedRose.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/TexttestFixture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/TexttestFixture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/java/com/gildedrose/StepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/java/com/gildedrose/StepDefinitions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/resources/features/GildedRose.feature" beforeDir="false" afterPath="$PROJECT_DIR$/test/resources/features/GildedRose.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +66,20 @@
       <recent name="C:\Users\ManuelaBarth\GildedRose\src\main\java\com" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RunCucumberTest">
+  <component name="RunManager" selected="Cucumber Java.Feature: GildedRose">
+    <configuration name="TexttestFixture" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.java.com.TexttestFixture" />
+      <module name="GildedRose" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.java.com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Feature: GildedRose" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/test/resources/features/GildedRose.feature" />
@@ -120,6 +88,46 @@
       <module name="GildedRose" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
       <option name="SUGGESTED_NAME" value="Feature: GildedRose" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Checking Aged Brie before SellIn passed" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/test/resources/features/GildedRose.feature" />
+      <option name="GLUE" value="com.gildedrose" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="GildedRose" />
+      <option name="NAME_FILTER" value="^Checking Aged Brie before SellIn passed$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Checking Aged Brie before SellIn passed$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Checking Aged Brie before SellIn passed" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Checking foo" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/test/resources/features/GildedRose.feature" />
+      <option name="GLUE" value="com.gildedrose" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="GildedRose" />
+      <option name="NAME_FILTER" value="^Checking foo$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Checking foo$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Checking foo" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -148,13 +156,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.TexttestFixture" />
+      <item itemvalue="Cucumber Java.Scenario: Checking Aged Brie before SellIn passed" />
+      <item itemvalue="Cucumber Java.Scenario: Checking foo" />
       <item itemvalue="Cucumber Java.Feature: GildedRose" />
       <item itemvalue="JUnit.RunCucumberTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RunCucumberTest" />
         <item itemvalue="Cucumber Java.Feature: GildedRose" />
+        <item itemvalue="JUnit.RunCucumberTest" />
+        <item itemvalue="Application.TexttestFixture" />
+        <item itemvalue="Cucumber Java.Scenario: Checking Aged Brie before SellIn passed" />
+        <item itemvalue="Cucumber Java.Scenario: Checking foo" />
       </list>
     </recent_temporary>
   </component>
@@ -167,9 +181,38 @@
       <option name="presentableId" value="Default" />
       <updated>1708354099571</updated>
     </task>
+    <task id="LOCAL-00001" summary="initial setup">
+      <created>1708413213531</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1708413213531</updated>
+    </task>
+    <task id="LOCAL-00002" summary="most important files (initial state)">
+      <created>1708413287824</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1708413287824</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="initial setup" />
+    <MESSAGE value="most important files (initial state)" />
+    <option name="LAST_COMMIT_MESSAGE" value="most important files (initial state)" />
   </component>
 </project>

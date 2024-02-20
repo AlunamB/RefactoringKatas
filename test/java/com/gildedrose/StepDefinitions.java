@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 import main.java.com.GildedRose;
 import main.java.com.Item;
 
-public class StepDefs {
+public class StepDefinitions {
 
   private Item[] items = new Item[1];
   private GildedRose app;
@@ -25,8 +25,10 @@ public class StepDefs {
     app.updateQuality();
   }
 
-  @Then("I should get item as {string}")
-  public void iShouldGetItemAs(String expected) {
-    assertEquals(expected, app.items[0].name);
+  @Then("I should get item as {string} and quality {int} and sellIn is {int}")
+  public void iShouldGetItemAsAndQualityAndSellInIs(String name, Integer expectedQuality, Integer expectedSellIn) {
+    assertEquals(name, app.items[0].name);
+    assertEquals(expectedQuality.intValue(), app.items[0].quality);
+    assertEquals(expectedSellIn.intValue(), app.items[0].sellIn);
   }
 }
