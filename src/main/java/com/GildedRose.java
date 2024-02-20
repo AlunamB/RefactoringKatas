@@ -35,8 +35,9 @@ public class GildedRose {
 
   private void updateItemQualityOfNormalItem(int i) {
     if (hasPositiveQualityValue(i)) {
-      changeItemQualityBy(i, NORMAL_ITEM_QUALITY_DECREASE);
       if (hasPassedSellIn(i)) {
+        changeItemQualityBy(i, NORMAL_ITEM_QUALITY_DECREASE * SELLIN_PASSED_QUALITY_CHANGE_FACTOR);
+      } else {
         changeItemQualityBy(i, NORMAL_ITEM_QUALITY_DECREASE);
       }
     }
