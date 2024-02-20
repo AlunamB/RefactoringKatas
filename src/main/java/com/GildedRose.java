@@ -81,7 +81,7 @@ public class GildedRose {
   }
 
   private boolean isBackstagePass(int itemIndex) {
-    return items[itemIndex].name.equals("Backstage passes to a TAFKAL80ETC concert");
+    return items[itemIndex].name.startsWith("Backstage passes");
   }
 
   private void decreaseSellInValue(int itemIndex) {
@@ -89,7 +89,7 @@ public class GildedRose {
   }
 
   private boolean isLegendaryItem(int itemIndex) {
-    return items[itemIndex].name.equals("Sulfuras, Hand of Ragnaros");
+    return items[itemIndex].name.startsWith("Sulfuras");
   }
 
   private void changeItemQualityBy(int itemIndex, int addedToCurrentQuality) {
