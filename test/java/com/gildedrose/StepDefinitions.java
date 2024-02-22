@@ -22,7 +22,7 @@ public class StepDefinitions {
 
   @When("I update the quality")
   public void iUpdateTheQuality() {
-    app.updateQuality();
+    app.updateItem();
   }
 
   @Then("I should get item as {string} and quality {int} and sellIn is {int}")
