@@ -21,18 +21,21 @@ public class GildedRose {
       if (isLegendaryItem(i)) {
         continue;
       }
-
+      
       decreaseSellInValue(i);
+      updateItemQuality(i);
+    }
+  }
 
-      if (isNormalItem(i)) {
-        updateItemQualityOfNormalItem(i);
-      } else if (isBackstagePass(i)) {
-        updateItemQualityOfBackstagePass(i);
-      } else if (isAgedBrie(i)) {
-        updateItemQualityOfAgedBrie(i);
-      } else if (isConjuredItem(i)) {
-        updateItemQualityOfConjuredItem(i);
-      }
+  private void updateItemQuality(int i) {
+    if (isNormalItem(i)) {
+      updateItemQualityOfNormalItem(i);
+    } else if (isBackstagePass(i)) {
+      updateItemQualityOfBackstagePass(i);
+    } else if (isAgedBrie(i)) {
+      updateItemQualityOfAgedBrie(i);
+    } else if (isConjuredItem(i)) {
+      updateItemQualityOfConjuredItem(i);
     }
   }
 
