@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GildedRose.iml" filepath="$PROJECT_DIR$/GildedRose.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RefactoringKatas.iml" filepath="$PROJECT_DIR$/RefactoringKatas.iml" />
     </modules>
   </component>
 </project>

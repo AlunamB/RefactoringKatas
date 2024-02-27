@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import main.java.com.GildedRose;
-import main.java.com.Item;
+import main.java.com.gildedrose.GildedRose;
+import main.java.com.gildedrose.Item;
 
 public class StepDefinitions {
 
