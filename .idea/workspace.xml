@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf730673-cd2e-4188-b992-c92b9c87917f" name="Changes" comment="changes Project to refactoringKatas">
+    <list default="true" id="cf730673-cd2e-4188-b992-c92b9c87917f" name="Changes" comment="edit gitignore">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uglytrivia/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uglytrivia/GameRunner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/uglytrivia/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/java/com/uglytrivia/SomeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -56,20 +60,20 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ManuelaBarth\Repositories\RefactoringKatas\test\java\com\uglytrivia" />
+      <recent name="C:\Users\ManuelaBarth\Repositories\RefactoringKatas\src\main\java\com\uglytrivia" />
       <recent name="C:\Users\ManuelaBarth\GildedRose\test\resources\gildedRose" />
       <recent name="C:\Users\ManuelaBarth\GildedRose\test\java\com\gildedrose" />
       <recent name="C:\Users\ManuelaBarth\GildedRose\test\resources\features" />
-      <recent name="C:\Users\ManuelaBarth\GildedRose\test\resources\com\gildedrose" />
-      <recent name="C:\Users\ManuelaBarth\GildedRose\src\main\java\com" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RunCucumberTest">
-    <configuration name="TexttestFixture" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.java.com.gildedrose.TexttestFixture" />
+  <component name="RunManager" selected="Application.GameRunner">
+    <configuration name="GameRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.java.com.uglytrivia.GameRunner" />
       <module name="RefactoringKatas" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.java.com.gildedrose.*" />
+          <option name="PATTERN" value="main.java.com.uglytrivia.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -85,46 +89,6 @@
       <module name="RefactoringKatas" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
       <option name="SUGGESTED_NAME" value="Feature: GildedRose" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: Checking Aged Brie SellIn PASSED" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/test/resources/features/GildedRose.feature" />
-      <option name="GLUE" value="com.gildedrose" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="RefactoringKatas" />
-      <option name="NAME_FILTER" value="^Checking Aged Brie SellIn PASSED$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Checking Aged Brie SellIn PASSED$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Checking Aged Brie SellIn PASSED" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: Checking Aged Brie before SellIn passed" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/test/resources/features/GildedRose.feature" />
-      <option name="GLUE" value="com.gildedrose" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="RefactoringKatas" />
-      <option name="NAME_FILTER" value="^Checking Aged Brie before SellIn passed$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Checking Aged Brie before SellIn passed$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Checking Aged Brie before SellIn passed" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -152,20 +116,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SomeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RefactoringKatas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.uglytrivia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.uglytrivia" />
+      <option name="MAIN_CLASS_NAME" value="com.uglytrivia.SomeTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SomeTest.true_is_true" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RefactoringKatas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.uglytrivia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.uglytrivia" />
+      <option name="MAIN_CLASS_NAME" value="com.uglytrivia.SomeTest" />
+      <option name="METHOD_NAME" value="true_is_true" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.TexttestFixture" />
-      <item itemvalue="Cucumber Java.Scenario: Checking Aged Brie SellIn PASSED" />
-      <item itemvalue="Cucumber Java.Scenario: Checking Aged Brie before SellIn passed" />
+      <item itemvalue="Application.GameRunner" />
       <item itemvalue="Cucumber Java.Feature: GildedRose" />
+      <item itemvalue="JUnit.SomeTest" />
+      <item itemvalue="JUnit.SomeTest.true_is_true" />
       <item itemvalue="JUnit.RunCucumberTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GameRunner" />
+        <item itemvalue="JUnit.SomeTest.true_is_true" />
+        <item itemvalue="JUnit.SomeTest" />
         <item itemvalue="JUnit.RunCucumberTest" />
         <item itemvalue="Cucumber Java.Feature: GildedRose" />
-        <item itemvalue="Cucumber Java.Scenario: Checking Aged Brie SellIn PASSED" />
-        <item itemvalue="Application.TexttestFixture" />
-        <item itemvalue="Cucumber Java.Scenario: Checking Aged Brie before SellIn passed" />
       </list>
     </recent_temporary>
   </component>
@@ -318,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1709017900136</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="edit gitignore">
+      <created>1709018303893</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1709018303893</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -353,7 +355,8 @@
     <MESSAGE value="extracted updateItemQuality" />
     <MESSAGE value="rename updateQuality to updateItem" />
     <MESSAGE value="changes Project to refactoringKatas" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes Project to refactoringKatas" />
+    <MESSAGE value="edit gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit gitignore" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
