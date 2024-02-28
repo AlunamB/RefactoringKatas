@@ -134,6 +134,15 @@ public class Game {
     }
   }
 
+  public boolean wrongAnswer() {
+    System.out.println("Question was incorrectly answered");
+    System.out.println(getCurrentPlayer().getName() + " was sent to the penalty box");
+    getCurrentPlayer().setInPenaltyBox(true);
+
+    switchToNextPlayer();
+    return true;
+  }
+
   private void switchToNextPlayer() {
     Player currentP = getCurrentPlayer();
     currentPlayer++;
@@ -143,14 +152,7 @@ public class Game {
     if (currentPlayer == playerList.size()) currentPlayer = 0;
   }
 
-  public boolean wrongAnswer() {
-    System.out.println("Question was incorrectly answered");
-    System.out.println(getCurrentPlayer().getName() + " was sent to the penalty box");
-    getCurrentPlayer().setInPenaltyBox(true);
 
-    switchToNextPlayer();
-    return true;
-  }
 
   public Player getCurrentPlayer() {
     Player currentPlayer = null;
