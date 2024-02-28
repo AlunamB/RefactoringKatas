@@ -19,6 +19,8 @@ public class Player {
 
   private boolean inPenaltyBox;
 
+  private boolean isCurrentPlayer;
+
   public boolean hasMaxAmountOfCoins() {
     return this.amountOfCoins == MAX_AMOUNT_OF_COINS;
   }
@@ -57,5 +59,13 @@ public class Player {
 
   public void setInPenaltyBox(boolean inPenaltyBox) {
     this.inPenaltyBox = inPenaltyBox;
+  }
+
+  public boolean isCurrentPlayer() {
+    return isCurrentPlayer;
+  }
+
+  public void setCurrentPlayer(boolean currentPlayer) {
+    isCurrentPlayer = currentPlayer;
   }
 }
