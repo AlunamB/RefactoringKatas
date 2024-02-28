@@ -21,6 +21,19 @@ public class Player {
 
   private boolean isCurrentPlayer;
 
+  public String toString() {
+    return "name:"
+        + getName()
+        + " amountOfCoins "
+        + getAmountOfCoins()
+        + " positionOnBoard:"
+        + getPositionOnBoard()
+        + " inPenaltyBox:"
+        + isInPenaltyBox()
+        + " isCurrentPlayer:"
+        + isCurrentPlayer();
+  }
+
   public boolean hasMaxAmountOfCoins() {
     return this.amountOfCoins == MAX_AMOUNT_OF_COINS;
   }
