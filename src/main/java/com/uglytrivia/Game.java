@@ -49,13 +49,9 @@ public class Game {
     if (currentPlayer.isInPenaltyBox()) {
       if (roll % 2 != 0) {
         isGettingOutOfPenaltyBox = true;
-
         System.out.println(currentPlayer.getName() + " is getting out of the penalty box");
-        currentPlayer.movePlayer(roll);
 
-        System.out.println(
-            currentPlayer.getName() + "'s new location is " + currentPlayer.getPositionOnBoard());
-        System.out.println("The category is " + currentCategory(currentPlayer));
+        currentPlayer.movePlayer(roll);
         askQuestion(currentPlayer);
       } else {
         System.out.println(currentPlayer.getName() + " is not getting out of the penalty box");
@@ -63,48 +59,37 @@ public class Game {
       }
 
     } else {
-
       currentPlayer.movePlayer(roll);
-
-      System.out.println(
-          currentPlayer.getName() + "'s new location is " + currentPlayer.getPositionOnBoard());
-      System.out.println("The category is " + currentCategory(currentPlayer));
       askQuestion(currentPlayer);
     }
   }
 
   private void askQuestion(Player player) {
-    if (currentCategory(player).equals("Pop")) System.out.println(popQuestions.removeFirst());
-    if (currentCategory(player).equals("Science"))
+    QuestionCategory category = currentCategory(player);
+    System.out.println("The category is " + category.name);
+
+    if (QuestionCategory.POP.equals(category)) System.out.println(popQuestions.removeFirst());
+    if (QuestionCategory.SCIENCE.equals(category))
       System.out.println(scienceQuestions.removeFirst());
-    if (currentCategory(player).equals("Sports")) System.out.println(sportsQuestions.removeFirst());
-    if (currentCategory(player).equals("Rock")) System.out.println(rockQuestions.removeFirst());
+    if (QuestionCategory.SPORTS.equals(category)) System.out.println(sportsQuestions.removeFirst());
+    if (QuestionCategory.ROCK.equals(category)) System.out.println(rockQuestions.removeFirst());
   }
 
-  private String currentCategory(Player player) {
-    if (player.getPositionOnBoard() == 0) return "Pop";
-    if (player.getPositionOnBoard() == 4) return "Pop";
-    if (player.getPositionOnBoard() == 8) return "Pop";
-    if (player.getPositionOnBoard() == 1) return "Science";
-    if (player.getPositionOnBoard() == 5) return "Science";
-    if (player.getPositionOnBoard() == 9) return "Science";
-    if (player.getPositionOnBoard() == 2) return "Sports";
-    if (player.getPositionOnBoard() == 6) return "Sports";
-    if (player.getPositionOnBoard() == 10) return "Sports";
-    return "Rock";
+  private QuestionCategory currentCategory(Player player) {
+    QuestionCategory category = null;
+    for (QuestionCategory q : QuestionCategory.values()) {
+      if (q.getPositions().contains(player.getPositionOnBoard())) {
+        category = q;
+        break;
+      }
+    }
+    return category;
   }
 
   public boolean wasCorrectlyAnswered() {
     if (getCurrentPlayer().isInPenaltyBox()) {
       if (isGettingOutOfPenaltyBox) {
-        System.out.println("Answer was correct!!!!");
         getCurrentPlayer().addCoin();
-
-        System.out.println(
-            getCurrentPlayer().getName()
-                + " now has "
-                + getCurrentPlayer().getAmountOfCoins()
-                + " Gold Coins.");
 
         boolean winner = getCurrentPlayer().isWinner();
         switchToNextPlayer();
@@ -116,15 +101,7 @@ public class Game {
 
     } else {
 
-      System.out.println("Answer was correct!!!!");
-
       getCurrentPlayer().addCoin();
-
-      System.out.println(
-          getCurrentPlayer().getName()
-              + " now has "
-              + getCurrentPlayer().getAmountOfCoins()
-              + " Gold Coins.");
 
       boolean winner = getCurrentPlayer().isWinner();
       switchToNextPlayer();
@@ -147,8 +124,6 @@ public class Game {
     currentP.setCurrentPlayer(false);
     nextPlayer.setCurrentPlayer(true);
   }
-
-
 
   public Player getCurrentPlayer() {
     Player currentPlayer = null;

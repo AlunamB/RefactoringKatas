@@ -30,7 +30,9 @@ public class Player {
   }
 
   public void addCoin() {
+    System.out.println("Answer was correct!!!!");
     setAmountOfCoins(getAmountOfCoins() + 1);
+    System.out.println(getName() + " now has " + getAmountOfCoins() + " Gold Coins.");
   }
 
   public void movePlayer(int rolledNumber) {
@@ -38,6 +40,7 @@ public class Player {
     if (getPositionOnBoard() > 11) {
       setPositionOnBoard(getPositionOnBoard() - Game.AMOUNT_OF_BOARD_POSITIONS);
     }
+    System.out.println(getName() + "'s new location is " + getPositionOnBoard());
   }
 
   public String getName() {
