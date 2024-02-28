@@ -22,12 +22,8 @@ public class Game {
       popQuestions.addLast("Pop Question " + i);
       scienceQuestions.addLast(("Science Question " + i));
       sportsQuestions.addLast(("Sports Question " + i));
-      rockQuestions.addLast(createRockQuestion(i));
+      rockQuestions.addLast("Rock Question " + i);
     }
-  }
-
-  public String createRockQuestion(int index) {
-    return "Rock Question " + index;
   }
 
   public boolean isPlayable() {
@@ -124,7 +120,7 @@ public class Game {
 
     } else {
 
-      System.out.println("Answer was corrent!!!!");
+      System.out.println("Answer was correct!!!!");
       purses[currentPlayer]++;
       System.out.println(
           players.get(currentPlayer) + " now has " + purses[currentPlayer] + " Gold Coins.");

@@ -4,13 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cf730673-cd2e-4188-b992-c92b9c87917f" name="Changes" comment="edit gitignore">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uglytrivia/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uglytrivia/GameRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/uglytrivia/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/java/com/uglytrivia/SomeTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="cf730673-cd2e-4188-b992-c92b9c87917f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/approvaltests-22.3.3-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/approvaltests-22.3.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/approvaltests-util-22.3.3-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/approvaltests-util-22.3.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-lang3-3.14.0-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/commons-lang3-3.14.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/java/com/uglytrivia/GameTest.itsLockedDown.approved.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/java/com/uglytrivia/GameTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uglytrivia/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uglytrivia/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/uglytrivia/GameRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/uglytrivia/GameRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/java/com/uglytrivia/SomeTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +39,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2caePfa0wVRdX4rGRmSpFxyFmKY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -41,23 +50,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "true",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/ManuelaBarth/Repositories/RefactoringKatas",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.CommitDialog"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.GameRunner.executor&quot;: &quot;Coverage&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;true&quot;,
+    &quot;JUnit.All in RefactoringKatas.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.GameTest.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.com in RefactoringKatas.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.com.uglytrivia in RefactoringKatas.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.main.java.com.gildedrose in RefactoringKatas.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.main.java.com.uglytrivia in RefactoringKatas.executor&quot;: &quot;Coverage&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ManuelaBarth/Repositories/RefactoringKatas&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ManuelaBarth\Repositories\RefactoringKatas\test\java\com\uglytrivia" />
@@ -67,9 +84,62 @@
       <recent name="C:\Users\ManuelaBarth\GildedRose\test\resources\features" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GameRunner">
-    <configuration name="GameRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.java.com.uglytrivia.GameRunner" />
+  <component name="RunManager" selected="JUnit.All in RefactoringKatas">
+    <configuration name="All in RefactoringKatas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RefactoringKatas" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RefactoringKatas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.uglytrivia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.uglytrivia" />
+      <option name="MAIN_CLASS_NAME" value="com.uglytrivia.GameTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com in RefactoringKatas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RefactoringKatas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.uglytrivia in RefactoringKatas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RefactoringKatas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.uglytrivia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.uglytrivia" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="main.java.com.uglytrivia in RefactoringKatas" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="RefactoringKatas" />
       <extension name="coverage">
         <pattern>
@@ -77,92 +147,37 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Feature: GildedRose" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/test/resources/features/GildedRose.feature" />
-      <option name="GLUE" value="com.gildedrose" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="RefactoringKatas" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: GildedRose" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RunCucumberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RefactoringKatas" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.gildedrose.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.gildedrose" />
-      <option name="MAIN_CLASS_NAME" value="com.gildedrose.RunCucumberTest" />
+      <option name="PACKAGE_NAME" value="main.java.com.uglytrivia" />
+      <option name="MAIN_CLASS_NAME" value="" />
       <option name="METHOD_NAME" value="" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SomeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RefactoringKatas" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.uglytrivia.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.uglytrivia" />
-      <option name="MAIN_CLASS_NAME" value="com.uglytrivia.SomeTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SomeTest.true_is_true" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="RefactoringKatas" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.uglytrivia.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.uglytrivia" />
-      <option name="MAIN_CLASS_NAME" value="com.uglytrivia.SomeTest" />
-      <option name="METHOD_NAME" value="true_is_true" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.GameRunner" />
-      <item itemvalue="Cucumber Java.Feature: GildedRose" />
-      <item itemvalue="JUnit.SomeTest" />
-      <item itemvalue="JUnit.SomeTest.true_is_true" />
-      <item itemvalue="JUnit.RunCucumberTest" />
+      <item itemvalue="JUnit.All in RefactoringKatas" />
+      <item itemvalue="JUnit.com in RefactoringKatas" />
+      <item itemvalue="JUnit.com.uglytrivia in RefactoringKatas" />
+      <item itemvalue="JUnit.GameTest" />
+      <item itemvalue="JUnit.main.java.com.uglytrivia in RefactoringKatas" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameRunner" />
-        <item itemvalue="JUnit.SomeTest.true_is_true" />
-        <item itemvalue="JUnit.SomeTest" />
-        <item itemvalue="JUnit.RunCucumberTest" />
-        <item itemvalue="Cucumber Java.Feature: GildedRose" />
+        <item itemvalue="JUnit.All in RefactoringKatas" />
+        <item itemvalue="JUnit.com in RefactoringKatas" />
+        <item itemvalue="JUnit.com.uglytrivia in RefactoringKatas" />
+        <item itemvalue="JUnit.GameTest" />
+        <item itemvalue="JUnit.main.java.com.uglytrivia in RefactoringKatas" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -320,7 +335,21 @@
       <option name="project" value="LOCAL" />
       <updated>1709018303893</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="initial uglytrivia commit">
+      <created>1709019327329</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1709019327329</updated>
+    </task>
+    <task id="LOCAL-00023" summary="gildedRose readme">
+      <created>1709019587753</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1709019587753</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -356,8 +385,31 @@
     <MESSAGE value="rename updateQuality to updateItem" />
     <MESSAGE value="changes Project to refactoringKatas" />
     <MESSAGE value="edit gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit gitignore" />
+    <MESSAGE value="initial uglytrivia commit" />
+    <MESSAGE value="gildedRose readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="gildedRose readme" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/RefactoringKatas$main_java_com_gildedrose_in_RefactoringKatas.ic" NAME="main.java.com.gildedrose in RefactoringKatas Coverage Results" MODIFIED="1709023173085" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>main.java.com.gildedrose.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RefactoringKatas$GameTest.ic" NAME="GameTest Coverage Results" MODIFIED="1709026374613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.uglytrivia.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RefactoringKatas$GameRunner.ic" NAME="GameRunner Coverage Results" MODIFIED="1709023048638" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>main.java.com.uglytrivia.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RefactoringKatas$main_java_com_uglytrivia_in_RefactoringKatas.ic" NAME="main.java.com.uglytrivia in RefactoringKatas Coverage Results" MODIFIED="1709023195576" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>main.java.com.uglytrivia.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RefactoringKatas$com_in_RefactoringKatas.ic" NAME="com in RefactoringKatas Coverage Results" MODIFIED="1709027864089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/RefactoringKatas$All_in_RefactoringKatas.ic" NAME="All in RefactoringKatas Coverage Results" MODIFIED="1709102993760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/RefactoringKatas$com_uglytrivia_in_RefactoringKatas.ic" NAME="com.uglytrivia in RefactoringKatas Coverage Results" MODIFIED="1709027852584" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.uglytrivia.*</FILTER>
+    </SUITE>
   </component>
 </project>
