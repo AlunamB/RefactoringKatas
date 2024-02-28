@@ -2,6 +2,8 @@ package main.java.com.uglytrivia;
 
 public class Player {
 
+  public static final int MAX_AMOUNT_OF_COINS = 6;
+
   public Player(String name) {
     this.name = name;
     setAmountOfCoins(0);
@@ -16,6 +18,18 @@ public class Player {
   private int positionOnBoard;
 
   private boolean inPenaltyBox;
+
+  public boolean hasMaxAmountOfCoins() {
+    return this.amountOfCoins == MAX_AMOUNT_OF_COINS;
+  }
+
+  public boolean isWinner() {
+    return !hasMaxAmountOfCoins();
+  }
+
+  public void addCoin() {
+    setAmountOfCoins(getAmountOfCoins() + 1);
+  }
 
   public String getName() {
     return name;
