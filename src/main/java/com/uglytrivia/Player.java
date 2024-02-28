@@ -33,6 +33,13 @@ public class Player {
     setAmountOfCoins(getAmountOfCoins() + 1);
   }
 
+  public void movePlayer(int rolledNumber) {
+    setPositionOnBoard(getPositionOnBoard() + rolledNumber);
+    if (getPositionOnBoard() > 11) {
+      setPositionOnBoard(getPositionOnBoard() - Game.AMOUNT_OF_BOARD_POSITIONS);
+    }
+  }
+
   public String getName() {
     return name;
   }
