@@ -16,7 +16,15 @@ public class GameApprovalTest {
     ByteArrayOutputStream resultStream = new ByteArrayOutputStream();
     System.setOut(new PrintStream(resultStream));
 
-    IntStream.range(1, 15).forEach(i -> GameRunner.playGame(randomizer));
+    IntStream.range(1, 15)
+        .forEach(
+            i -> {
+              try {
+                GameRunner.playGame(randomizer);
+              } catch (InstantiationException e) {
+                throw new RuntimeException(e);
+              }
+            });
 
     Approvals.verify(resultStream.toString());
   }
