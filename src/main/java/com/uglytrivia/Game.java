@@ -23,10 +23,10 @@ public class Game {
   }
 
   public boolean isPlayable() {
-    return (howManyplayerList() >= 2);
+    return (getAmountOfPlayers() >= 2);
   }
 
-  public boolean add(String playerName) {
+  public void add(String playerName) {
     playerList.add(new Player(playerName));
     if (playerList.size() == 1) {
       playerList.get(0).setCurrentPlayer(true);
@@ -34,10 +34,9 @@ public class Game {
 
     System.out.println(playerName + " was added");
     System.out.println("They are player number " + playerList.size());
-    return true;
   }
 
-  public int howManyplayerList() {
+  public int getAmountOfPlayers() {
     return playerList.size();
   }
 
@@ -47,7 +46,7 @@ public class Game {
     System.out.println("They have rolled a " + roll);
 
     if (currentPlayer.isInPenaltyBox()) {
-      if (roll % 2 != 0) {
+      if (isOddNumber(roll)) {
         isGettingOutOfPenaltyBox = true;
         System.out.println(currentPlayer.getName() + " is getting out of the penalty box");
 
@@ -144,5 +143,9 @@ public class Game {
     } else {
       return playerList.get(0);
     }
+  }
+
+  private static boolean isOddNumber(int roll) {
+    return roll % 2 != 0;
   }
 }
