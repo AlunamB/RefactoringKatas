@@ -1,7 +1,5 @@
 package com.uglytrivia;
 
-import static org.junit.Assert.*;
-
 import java.io.*;
 import java.util.Random;
 import java.util.stream.IntStream;
@@ -9,7 +7,7 @@ import main.java.com.uglytrivia.GameRunner;
 import org.approvaltests.Approvals;
 import org.junit.Test;
 
-public class GameTest {
+public class GameApprovalTest {
 
   @Test
   public void itsLockedDown() throws Exception {

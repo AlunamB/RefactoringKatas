@@ -12,13 +12,11 @@ public class GameRunner {
   }
 
   public static void playGame(Random rand) {
-    Game aGame = new Game();
+    Game aGame = initGame();
+    playGame(rand, aGame);
+  }
 
-    aGame.add("Chet");
-    aGame.add("Pat");
-    aGame.add("Sue");
-
-
+  public static void playGame(Random rand, Game aGame) {
     do {
 
       aGame.roll(rand.nextInt(5) + 1);
@@ -32,5 +30,14 @@ public class GameRunner {
 
 
     } while (notAWinner);
+  }
+
+  private static Game initGame() {
+    Game aGame = new Game();
+
+    aGame.add("Chet");
+    aGame.add("Pat");
+    aGame.add("Sue");
+    return aGame;
   }
 }
