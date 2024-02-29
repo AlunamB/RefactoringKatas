@@ -9,7 +9,7 @@ import main.java.com.uglytrivia.GameRunner;
 import main.java.com.uglytrivia.Player;
 import org.junit.Test;
 
-public class GameTest {
+public class GameInitTest {
   @Test
   public void shouldInitFirstPlayerAsCurrentPlayer() {
 
