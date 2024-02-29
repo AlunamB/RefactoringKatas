@@ -23,7 +23,7 @@ public class Game {
   }
 
   public boolean isPlayable() {
-    return (getAmountOfPlayers() >= 2);
+    return (getAmountOfPlayers() >= 2 && getAmountOfPlayers() <= 6);
   }
 
   public void add(String playerName) {

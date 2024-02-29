@@ -22,7 +22,10 @@ public class GameRunner {
     boolean notAWinner;
     do {
       if (!aGame.isPlayable()) {
-        throw new InstantiationException("A Game needs at least two players.");
+        throw new InstantiationException(
+            "The valid amount of players is from 2 up to 6. The game had "
+                + aGame.getAmountOfPlayers()
+                + " players.");
       }
       aGame.roll(rand.nextInt(5) + 1);
 

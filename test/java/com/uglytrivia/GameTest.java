@@ -55,8 +55,31 @@ public class GameTest {
     Exception exception2 =
         assertThrows(InstantiationException.class, () -> GameRunner.playGame(new Random(), aGame));
 
-    String expectedMessage = "A Game needs at least two players.";
-    assertEquals(expectedMessage, exception1.getMessage());
-    assertEquals(expectedMessage, exception2.getMessage());
+    String expectedMessage1 =
+        "The valid amount of players is from 2 up to 6. The game had 0 players.";
+    String expectedMessage2 =
+        "The valid amount of players is from 2 up to 6. The game had 1 players.";
+    assertEquals(expectedMessage1, exception1.getMessage());
+    assertEquals(expectedMessage2, exception2.getMessage());
+  }
+
+  @Test
+  public void shouldThrowExceptionWithMoreThanSixPlayers() {
+    Game aGame = new Game();
+
+    aGame.add("Manu1");
+    aGame.add("Manu2");
+    aGame.add("Manu3");
+    aGame.add("Manu4");
+    aGame.add("Manu5");
+    aGame.add("Manu6");
+    aGame.add("Manu7");
+
+    Exception exception =
+        assertThrows(InstantiationException.class, () -> GameRunner.playGame(new Random(), aGame));
+
+    String expectedMessage =
+        "The valid amount of players is from 2 up to 6. The game had 7 players.";
+    assertEquals(expectedMessage, exception.getMessage());
   }
 }
