@@ -2,6 +2,7 @@ package main.java.com.uglytrivia;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Random;
 
 public class Game {
   public static final int AMOUNT_OF_BOARD_POSITIONS = 12;
@@ -38,6 +39,19 @@ public class Game {
 
   public int getAmountOfPlayers() {
     return playerList.size();
+  }
+
+  public boolean playNextRound(Random rand) {
+    roll(rand.nextInt(5) + 1);
+    return getPlayerAnswer(rand.nextInt(9));
+  }
+
+  public boolean getPlayerAnswer(int randomNumber) {
+    if (randomNumber == 7) {
+      return playerAnsweredWrong();
+    } else {
+      return playerAnsweredCorrect();
+    }
   }
 
   public void roll(int roll) {
@@ -85,7 +99,7 @@ public class Game {
     return category;
   }
 
-  public boolean wasCorrectlyAnswered() {
+  private boolean playerAnsweredCorrect() {
     if (getCurrentPlayer().isInPenaltyBox()) {
       if (isGettingOutOfPenaltyBox) {
         getCurrentPlayer().addCoin();
@@ -108,7 +122,7 @@ public class Game {
     }
   }
 
-  public boolean wrongAnswer() {
+  private boolean playerAnsweredWrong() {
     System.out.println("Question was incorrectly answered");
     System.out.println(getCurrentPlayer().getName() + " was sent to the penalty box");
     getCurrentPlayer().setInPenaltyBox(true);
