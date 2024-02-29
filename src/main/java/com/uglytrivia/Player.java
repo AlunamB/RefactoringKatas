@@ -19,6 +19,8 @@ public class Player {
 
   private boolean inPenaltyBox;
 
+  private boolean isGettingOutOfPenaltyBox;
+
   private boolean isCurrentPlayer;
 
   public String toString() {
@@ -82,6 +84,14 @@ public class Player {
 
   public void setInPenaltyBox(boolean inPenaltyBox) {
     this.inPenaltyBox = inPenaltyBox;
+  }
+
+  public boolean isGettingOutOfPenaltyBox() {
+    return isGettingOutOfPenaltyBox;
+  }
+
+  public void setGettingOutOfPenaltyBox(boolean gettingOutOfPenaltyBox) {
+    isGettingOutOfPenaltyBox = gettingOutOfPenaltyBox;
   }
 
   public boolean isCurrentPlayer() {

@@ -12,7 +12,6 @@ public class Game {
   LinkedList scienceQuestions = new LinkedList();
   LinkedList sportsQuestions = new LinkedList();
   LinkedList rockQuestions = new LinkedList();
-  boolean isGettingOutOfPenaltyBox;
 
   public Game() {
     for (int i = 0; i < 50; i++) {
@@ -59,17 +58,17 @@ public class Game {
     Player currentPlayer = getCurrentPlayer();
     System.out.println(currentPlayer.getName() + " is the current player");
     System.out.println("They have rolled a " + roll);
+    currentPlayer.setGettingOutOfPenaltyBox(false);
 
     if (currentPlayer.isInPenaltyBox()) {
       if (isOddNumber(roll)) {
-        isGettingOutOfPenaltyBox = true;
+        currentPlayer.setGettingOutOfPenaltyBox(true);
         System.out.println(currentPlayer.getName() + " is getting out of the penalty box");
 
         currentPlayer.movePlayer(roll);
         askQuestion(currentPlayer);
       } else {
         System.out.println(currentPlayer.getName() + " is not getting out of the penalty box");
-        isGettingOutOfPenaltyBox = false;
       }
 
     } else {
@@ -101,8 +100,9 @@ public class Game {
   }
 
   private void playerAnsweredCorrect() {
-    if (getCurrentPlayer().isInPenaltyBox()) {
-      if (isGettingOutOfPenaltyBox) {
+    Player currentPlayer = getCurrentPlayer();
+    if (currentPlayer.isInPenaltyBox()) {
+      if (currentPlayer.isGettingOutOfPenaltyBox()) {
         getCurrentPlayer().addCoin();
       }
 
