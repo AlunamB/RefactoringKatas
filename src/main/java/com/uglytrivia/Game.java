@@ -41,17 +41,18 @@ public class Game {
     return playerList.size();
   }
 
-  public boolean playNextRound(Random rand) {
+  public void playNextRound(Random rand) {
     roll(rand.nextInt(5) + 1);
-    return getPlayerAnswer(rand.nextInt(9));
+    playerAnswersQuestion(rand.nextInt(9));
   }
 
-  public boolean getPlayerAnswer(int randomNumber) {
+  public void playerAnswersQuestion(int randomNumber) {
     if (randomNumber == 7) {
-      return playerAnsweredWrong();
+      playerAnsweredWrong();
     } else {
-      return playerAnsweredCorrect();
+      playerAnsweredCorrect();
     }
+    switchToNextPlayer();
   }
 
   public void roll(int roll) {
@@ -99,36 +100,21 @@ public class Game {
     return category;
   }
 
-  private boolean playerAnsweredCorrect() {
+  private void playerAnsweredCorrect() {
     if (getCurrentPlayer().isInPenaltyBox()) {
       if (isGettingOutOfPenaltyBox) {
         getCurrentPlayer().addCoin();
-
-        boolean winner = getCurrentPlayer().isWinner();
-        switchToNextPlayer();
-        return winner;
-      } else {
-        switchToNextPlayer();
-        return true;
       }
 
     } else {
-
       getCurrentPlayer().addCoin();
-
-      boolean winner = getCurrentPlayer().isWinner();
-      switchToNextPlayer();
-      return winner;
     }
   }
 
-  private boolean playerAnsweredWrong() {
+  private void playerAnsweredWrong() {
     System.out.println("Question was incorrectly answered");
     System.out.println(getCurrentPlayer().getName() + " was sent to the penalty box");
     getCurrentPlayer().setInPenaltyBox(true);
-
-    switchToNextPlayer();
-    return true;
   }
 
   private void switchToNextPlayer() {
@@ -157,6 +143,15 @@ public class Game {
     } else {
       return playerList.get(0);
     }
+  }
+
+  public boolean noPlayerHasWon() {
+    for (Player p : playerList) {
+      if (p.hasEnoughCoinsToWin()) {
+        return false;
+      }
+    }
+    return true;
   }
 
   private static boolean isOddNumber(int roll) {

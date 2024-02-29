@@ -19,7 +19,6 @@ public class GameRunner {
   }
 
   public static void playGame(Random rand, Game aGame) throws InstantiationException {
-    boolean notAWinner;
     do {
       if (!aGame.isPlayable()) {
         throw new InstantiationException(
@@ -27,9 +26,9 @@ public class GameRunner {
                 + aGame.getAmountOfPlayers()
                 + " players.");
       }
-      notAWinner = aGame.playNextRound(rand);
+      aGame.playNextRound(rand);
 
-    } while (notAWinner);
+    } while (aGame.noPlayerHasWon());
   }
 
   private static Game initGame() {

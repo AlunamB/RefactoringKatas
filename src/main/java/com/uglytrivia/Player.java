@@ -38,8 +38,8 @@ public class Player {
     return this.amountOfCoins == MAX_AMOUNT_OF_COINS;
   }
 
-  public boolean isWinner() {
-    return !hasMaxAmountOfCoins();
+  public boolean hasEnoughCoinsToWin() {
+    return hasMaxAmountOfCoins();
   }
 
   public void addCoin() {
