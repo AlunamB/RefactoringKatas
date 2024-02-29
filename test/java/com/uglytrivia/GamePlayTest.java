@@ -1,13 +1,15 @@
 package com.uglytrivia;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
+import java.util.Random;
 import main.java.com.uglytrivia.Game;
+import main.java.com.uglytrivia.GameRunner;
 import main.java.com.uglytrivia.Player;
 import org.junit.Test;
 
 public class GamePlayTest {
+
   @Test
   public void shouldGoToPenaltyBoxAfterWrongAnswer() {
     Game aGame = new Game();
@@ -35,9 +37,6 @@ public class GamePlayTest {
     Game aGame = new Game();
 
     String name1 = "Manu";
-    Player playerOne = new Player(name1);
-    playerOne.setCurrentPlayer(true);
-
     String name2 = "Pat";
 
     aGame.add(name1);
@@ -52,9 +51,6 @@ public class GamePlayTest {
     Game aGame = new Game();
 
     String name1 = "Manu";
-    Player playerOne = new Player(name1);
-    playerOne.setCurrentPlayer(true);
-
     String name2 = "Pat";
 
     aGame.add(name1);
@@ -63,4 +59,109 @@ public class GamePlayTest {
     aGame.playerAnswersQuestion(1);
     assertEquals(name2, aGame.getCurrentPlayer().getName());
   }
+
+  @Test
+  public void shouldAddCoinAfterCorrectAnswerAndWasNotInPenaltyBox() {
+    Game aGame = new Game();
+
+    String name1 = "Manu";
+    String name2 = "Pat";
+
+    aGame.add(name1);
+    aGame.add(name2);
+
+    Player player = aGame.getCurrentPlayer();
+
+    assertEquals(0, player.getAmountOfCoins());
+    aGame.playerAnswersQuestion(1);
+    assertEquals(1, player.getAmountOfCoins());
+  }
+
+  @Test
+  public void shouldNotAddCoinWhenInPenaltyBoxAndNotGettingOut() {
+    Game aGame = new Game();
+
+    String name1 = "Manu";
+    String name2 = "Pat";
+
+    aGame.add(name1);
+    aGame.add(name2);
+
+    Player player = aGame.getCurrentPlayer();
+    player.setInPenaltyBox(true);
+    player.setGettingOutOfPenaltyBox(false);
+
+    assertEquals(0, player.getAmountOfCoins());
+    aGame.playerAnswersQuestion(1);
+    assertEquals(0, player.getAmountOfCoins());
+  }
+
+  @Test
+  public void shouldAddCoinWhenInPenaltyBoxAndGettingOut() {
+    Game aGame = new Game();
+
+    String name1 = "Manu";
+    String name2 = "Pat";
+
+    aGame.add(name1);
+    aGame.add(name2);
+
+    Player player = aGame.getCurrentPlayer();
+    player.setInPenaltyBox(true);
+    player.setGettingOutOfPenaltyBox(true);
+
+    assertEquals(0, player.getAmountOfCoins());
+    aGame.playerAnswersQuestion(1);
+    assertEquals(1, player.getAmountOfCoins());
+  }
+
+  @Test
+  public void shouldEndGameWhenPlayerWins() throws InstantiationException {
+    Game aGame = new Game();
+
+    String name1 = "Manu";
+    String name2 = "Pat";
+
+    aGame.add(name1);
+    aGame.add(name2);
+    Random randomizer = new Random(123455);
+
+    GameRunner.playGame(randomizer, aGame);
+    assertFalse(aGame.noPlayerHasWon());
+  }
+
+  @Test
+  public void shouldFindWinnerWhenPlayerHasMaxCoins() {
+    Game aGame = new Game();
+
+    String name1 = "Manu";
+    String name2 = "Pat";
+
+    aGame.add(name1);
+    aGame.add(name2);
+
+    Player player = aGame.getCurrentPlayer();
+    player.setAmountOfCoins(Player.MAX_AMOUNT_OF_COINS);
+    assertFalse(aGame.noPlayerHasWon());
+  }
+  @Test
+  public void shouldNotFindWinnerWhenPlayerHasLessThanMaxCoins() {
+    Game aGame = new Game();
+
+    String name1 = "Manu";
+    String name2 = "Pat";
+
+    aGame.add(name1);
+    aGame.add(name2);
+
+    Player player1 = aGame.getCurrentPlayer();
+    player1.setAmountOfCoins(0);
+
+    Player player2 = aGame.getNextPlayer();
+    player2.setAmountOfCoins(5);
+
+    assertTrue(aGame.noPlayerHasWon());
+  }
+
+
 }
