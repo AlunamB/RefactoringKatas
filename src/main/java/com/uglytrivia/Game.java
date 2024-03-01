@@ -1,25 +1,16 @@
 package main.java.com.uglytrivia;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.Random;
 
 public class Game {
   public static final int AMOUNT_OF_BOARD_POSITIONS = 12;
-  ArrayList<Player> playerList = new ArrayList<Player>();
+  ArrayList<Player> playerList = new ArrayList<>();
 
-  LinkedList popQuestions = new LinkedList();
-  LinkedList scienceQuestions = new LinkedList();
-  LinkedList sportsQuestions = new LinkedList();
-  LinkedList rockQuestions = new LinkedList();
+  private QuestionStack questionStack = new QuestionStack();
 
   public Game() {
-    for (int i = 0; i < 50; i++) {
-      popQuestions.addLast("Pop Question " + i);
-      scienceQuestions.addLast(("Science Question " + i));
-      sportsQuestions.addLast(("Sports Question " + i));
-      rockQuestions.addLast("Rock Question " + i);
-    }
+    questionStack.fillStack();
   }
 
   public boolean isPlayable() {
@@ -78,17 +69,13 @@ public class Game {
   }
 
   private void askQuestion(Player player) {
-    QuestionCategory category = currentCategory(player);
+    QuestionCategory category = getCurrentCategoryForPosition(player);
     System.out.println("The category is " + category.name);
 
-    if (QuestionCategory.POP.equals(category)) System.out.println(popQuestions.removeFirst());
-    if (QuestionCategory.SCIENCE.equals(category))
-      System.out.println(scienceQuestions.removeFirst());
-    if (QuestionCategory.SPORTS.equals(category)) System.out.println(sportsQuestions.removeFirst());
-    if (QuestionCategory.ROCK.equals(category)) System.out.println(rockQuestions.removeFirst());
+    System.out.println(questionStack.pullCardFromStack(category).getQuestionText());
   }
 
-  private QuestionCategory currentCategory(Player player) {
+  private QuestionCategory getCurrentCategoryForPosition(Player player) {
     QuestionCategory category = null;
     for (QuestionCategory q : QuestionCategory.values()) {
       if (q.getPositions().contains(player.getPositionOnBoard())) {
