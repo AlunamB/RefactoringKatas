@@ -24,4 +24,7 @@ public enum QuestionCategory {
   public List<Integer> getPositions() {
     return positions;
   }
+
+
+
 }

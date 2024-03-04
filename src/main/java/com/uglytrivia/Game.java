@@ -1,6 +1,7 @@
 package main.java.com.uglytrivia;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -8,10 +9,11 @@ public class Game {
   public static final int AMOUNT_OF_BOARD_POSITIONS = 12;
   ArrayList<Player> playerList = new ArrayList<>();
 
-  private QuestionStack questionStack = new QuestionStack();
+  private QuestionStack stackOfOpenQuestions = new QuestionStack();
+  private QuestionStack stackOfUsedQuestions = new QuestionStack();
 
   public Game() {
-    questionStack.fillStack();
+    stackOfOpenQuestions.fillStack();
   }
 
   public boolean isPlayable() {
@@ -73,7 +75,9 @@ public class Game {
     QuestionCategory category = getCurrentCategoryForPosition(player);
     System.out.println("The category is " + category.name);
 
-    System.out.println(questionStack.pullCardFromStack(category).getQuestionText());
+    QuestionCard pulledCard = stackOfOpenQuestions.pullCardFromStack(category);
+    System.out.println(pulledCard.getQuestionText());
+    stackOfUsedQuestions.addCardToStack(pulledCard);
   }
 
   private QuestionCategory getCurrentCategoryForPosition(Player player) {
@@ -146,7 +150,25 @@ public class Game {
     return roll % 2 != 0;
   }
 
-  public Map<QuestionCategory, Integer> getAmountsOfQuestions() {
-    return questionStack.getAmountsOfQuestions();
+  public Map<QuestionCategory, Integer> getAmountsOfOpenQuestions() {
+    return stackOfOpenQuestions.getAmountsOfQuestions();
+  }
+
+  public Map<QuestionCategory, Integer> getAmountsOfUsedQuestions() {
+    return stackOfUsedQuestions.getAmountsOfQuestions();
+  }
+
+  public String getUsedQuestionSummary() {
+    StringBuffer buffer = new StringBuffer("This is the summary of the used question cards:");
+    Map<QuestionCategory, Integer> amounts = getAmountsOfUsedQuestions();
+    List<QuestionCategory> sortedCategories =
+        amounts.keySet().stream().sorted((o1, o2) -> o1.getName().compareTo(o2.getName())).toList();
+    for (QuestionCategory category : sortedCategories) {
+      buffer.append(category.getName());
+      buffer.append(":");
+      buffer.append(amounts.get(category));
+      buffer.append(" ");
+    }
+    return buffer.toString();
   }
 }

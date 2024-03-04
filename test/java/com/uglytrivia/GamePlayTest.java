@@ -131,6 +131,25 @@ public class GamePlayTest {
   }
 
   @Test
+  public void shouldGetUsedQuestionCardSummaryAfterAWinnerWasFound() throws InstantiationException {
+    Game aGame = new Game();
+
+    String name1 = "Manu";
+    String name2 = "Pat";
+
+    aGame.add(name1);
+    aGame.add(name2);
+    Random randomizer = new Random(123455);
+
+    GameRunner.playGame(randomizer, aGame);
+
+    String expectedSummaryString =
+        "This is the summary of the used question cards:Pop:4 Rock:1 Science:4 Sports:2 ";
+
+    assertEquals(expectedSummaryString, aGame.getUsedQuestionSummary());
+  }
+
+  @Test
   public void shouldFindWinnerWhenPlayerHasMaxCoins() {
     Game aGame = new Game();
 
@@ -162,6 +181,8 @@ public class GamePlayTest {
 
     assertTrue(aGame.noPlayerHasWon());
   }
+
+
 
 
 }

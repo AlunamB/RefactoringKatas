@@ -31,10 +31,16 @@ public class QuestionStack {
     return list.removeFirst();
   }
 
+  public void addCardToStack(QuestionCard card) {
+    LinkedList<QuestionCard> list = questionStack.get(card.getCategory());
+    list.addLast(card);
+  }
+
   public Map<QuestionCategory, Integer> getAmountsOfQuestions() {
     Map<QuestionCategory, Integer> amounts = new HashMap<>();
-    for (Map.Entry<QuestionCategory, LinkedList<QuestionCard>> e : questionStack.entrySet()) {
-      amounts.put(e.getKey(), e.getValue().size());
+
+    for (QuestionCategory category : questionStack.keySet()) {
+      amounts.put(category, questionStack.get(category).size());
     }
 
     return amounts;

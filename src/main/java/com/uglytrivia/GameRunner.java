@@ -29,6 +29,7 @@ public class GameRunner {
       aGame.playNextRound(rand);
 
     } while (aGame.noPlayerHasWon());
+    System.out.println(aGame.getUsedQuestionSummary());
   }
 
   private static Game initGame() {
