@@ -6,6 +6,7 @@ import java.util.Map;
 
 public class QuestionStack {
 
+  public static final int AMOUNT_QUESTIONS_PER_CATEGORY = 50;
   private Map<QuestionCategory, LinkedList<QuestionCard>> questionStack = new HashMap<>();
 
   public QuestionStack() {
@@ -17,7 +18,7 @@ public class QuestionStack {
   public void fillStack() {
 
     for (QuestionCategory category : QuestionCategory.values()) {
-      for (int i = 0; i < 50; i++) {
+      for (int i = 0; i < AMOUNT_QUESTIONS_PER_CATEGORY; i++) {
         LinkedList<QuestionCard> list = questionStack.get(category);
         list.addLast(new QuestionCard(category, i));
         questionStack.put(category, list);
@@ -28,5 +29,14 @@ public class QuestionStack {
   public QuestionCard pullCardFromStack(QuestionCategory category) {
     LinkedList<QuestionCard> list = questionStack.get(category);
     return list.removeFirst();
+  }
+
+  public Map<QuestionCategory, Integer> getAmountsOfQuestions() {
+    Map<QuestionCategory, Integer> amounts = new HashMap<>();
+    for (Map.Entry<QuestionCategory, LinkedList<QuestionCard>> e : questionStack.entrySet()) {
+      amounts.put(e.getKey(), e.getValue().size());
+    }
+
+    return amounts;
   }
 }

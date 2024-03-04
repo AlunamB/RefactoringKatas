@@ -1,6 +1,7 @@
 package main.java.com.uglytrivia;
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Random;
 
 public class Game {
@@ -143,5 +144,9 @@ public class Game {
 
   private static boolean isOddNumber(int roll) {
     return roll % 2 != 0;
+  }
+
+  public Map<QuestionCategory, Integer> getAmountsOfQuestions() {
+    return questionStack.getAmountsOfQuestions();
   }
 }
