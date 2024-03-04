@@ -4,15 +4,15 @@ import java.util.Arrays;
 import java.util.List;
 
 public enum QuestionCategory {
-  POP("Pop", Arrays.asList(new Integer[] {0, 4, 8})),
-  SCIENCE("Science", Arrays.asList(new Integer[] {1, 5, 9})),
-  SPORTS("Sports", Arrays.asList(new Integer[] {2, 6, 10})),
-  ROCK("Rock", Arrays.asList(new Integer[] {3, 7, 11}));
+  POP("Pop", Arrays.asList(0, 4, 8)),
+  SCIENCE("Science", Arrays.asList(1, 5, 9)),
+  SPORTS("Sports", Arrays.asList(2, 6, 10)),
+  ROCK("Rock", Arrays.asList(3, 7, 11));
 
-  public String name;
-  public List<Integer> positions;
+  public final String name;
+  public final List<Integer> positions;
 
-  private QuestionCategory(String name, List positions) {
+  QuestionCategory(String name, List<Integer> positions) {
     this.name = name;
     this.positions = positions;
   }

@@ -1,16 +1,13 @@
 package main.java.com.uglytrivia;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
 
 public class Game {
   public static final int AMOUNT_OF_BOARD_POSITIONS = 12;
   ArrayList<Player> playerList = new ArrayList<>();
 
-  private QuestionStack stackOfOpenQuestions = new QuestionStack();
-  private QuestionStack stackOfUsedQuestions = new QuestionStack();
+  private final QuestionStack stackOfOpenQuestions = new QuestionStack();
+  private final QuestionStack stackOfUsedQuestions = new QuestionStack();
 
   public Game() {
     stackOfOpenQuestions.fillStack();
@@ -159,16 +156,16 @@ public class Game {
   }
 
   public String getUsedQuestionSummary() {
-    StringBuffer buffer = new StringBuffer("This is the summary of the used question cards:");
+    StringBuilder builder = new StringBuilder("This is the summary of the used question cards:");
     Map<QuestionCategory, Integer> amounts = getAmountsOfUsedQuestions();
     List<QuestionCategory> sortedCategories =
-        amounts.keySet().stream().sorted((o1, o2) -> o1.getName().compareTo(o2.getName())).toList();
+        amounts.keySet().stream().sorted(Comparator.comparing(QuestionCategory::getName)).toList();
     for (QuestionCategory category : sortedCategories) {
-      buffer.append(category.getName());
-      buffer.append(":");
-      buffer.append(amounts.get(category));
-      buffer.append(" ");
+      builder.append(category.getName());
+      builder.append(":");
+      builder.append(amounts.get(category));
+      builder.append(" ");
     }
-    return buffer.toString();
+    return builder.toString();
   }
 }

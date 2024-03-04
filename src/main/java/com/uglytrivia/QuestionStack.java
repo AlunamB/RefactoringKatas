@@ -7,11 +7,11 @@ import java.util.Map;
 public class QuestionStack {
 
   public static final int AMOUNT_QUESTIONS_PER_CATEGORY = 50;
-  private Map<QuestionCategory, LinkedList<QuestionCard>> questionStack = new HashMap<>();
+  private final Map<QuestionCategory, LinkedList<QuestionCard>> questionStack = new HashMap<>();
 
   public QuestionStack() {
     for (QuestionCategory cat : QuestionCategory.values()) {
-      questionStack.put(cat, new LinkedList<QuestionCard>());
+      questionStack.put(cat, new LinkedList<>());
     }
   }
 

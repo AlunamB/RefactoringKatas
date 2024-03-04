@@ -10,7 +10,7 @@ import main.java.com.gildedrose.Item;
 
 public class StepDefinitions {
 
-  private Item[] items = new Item[1];
+  private final Item[] items = new Item[1];
   private GildedRose app;
 
   @Given("The item as {string} with a quality of {int} and {int} days left to sell")
