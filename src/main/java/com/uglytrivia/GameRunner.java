@@ -19,15 +19,15 @@ public class GameRunner {
   }
 
   public static void playGame(Random rand, Game aGame) throws InstantiationException {
-    do {
-      if (!aGame.isPlayable()) {
-        throw new InstantiationException(
-            "The valid amount of players is from 2 up to 6. The game had "
-                + aGame.getAmountOfPlayers()
-                + " players.");
-      }
-      aGame.playNextRound(rand);
+    if (!aGame.isPlayable()) {
+      throw new InstantiationException(
+          "The valid amount of players is from 2 up to 6. The game had "
+              + aGame.getAmountOfPlayers()
+              + " players.");
+    }
 
+    do {
+      aGame.playNextRound(rand);
     } while (aGame.noPlayerHasWon());
     System.out.println(aGame.getUsedQuestionSummary());
   }
