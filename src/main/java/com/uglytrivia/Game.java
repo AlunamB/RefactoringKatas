@@ -6,15 +6,26 @@ public class Game {
   public static final int AMOUNT_OF_BOARD_POSITIONS = 12;
   ArrayList<Player> playerList = new ArrayList<>();
 
+  private final int amountOfCoinsForWinning;
+
   private final QuestionStack stackOfOpenQuestions = new QuestionStack();
   private final QuestionStack stackOfUsedQuestions = new QuestionStack();
 
-  public Game() {
+  public Game(int amountOfCoinsForWinning) {
     stackOfOpenQuestions.fillStack();
+    this.amountOfCoinsForWinning = amountOfCoinsForWinning;
   }
 
   public boolean isPlayable() {
-    return (getAmountOfPlayers() >= 2 && getAmountOfPlayers() <= 6);
+    return checkAmountOfPlayers() && checkAmountOfCoinsForWinning();
+  }
+
+  private boolean checkAmountOfPlayers() {
+    return getAmountOfPlayers() >= 2 && getAmountOfPlayers() <= 6;
+  }
+
+  private boolean checkAmountOfCoinsForWinning() {
+    return amountOfCoinsForWinning >= 3;
   }
 
   public void add(String playerName) {
@@ -136,7 +147,7 @@ public class Game {
 
   public boolean noPlayerHasWon() {
     for (Player p : playerList) {
-      if (p.hasEnoughCoinsToWin()) {
+      if (p.hasEnoughCoinsToWin(6)) {
         return false;
       }
     }
@@ -167,5 +178,9 @@ public class Game {
       builder.append(" ");
     }
     return builder.toString();
+  }
+
+  public int getAmountOfCoinsForWinning() {
+    return amountOfCoinsForWinning;
   }
 }

@@ -1,7 +1,6 @@
 package com.uglytrivia;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThrows;
+import static org.junit.Assert.*;
 
 import java.util.Random;
 import main.java.com.uglytrivia.Game;
@@ -13,7 +12,7 @@ public class GameInitTest {
   @Test
   public void shouldInitFirstPlayerAsCurrentPlayer() {
 
-    Game aGame = new Game();
+    Game aGame = new Game(6);
     String name = "Manu";
     Player expectedPlayerOne = new Player(name);
     expectedPlayerOne.setCurrentPlayer(true);
@@ -26,7 +25,7 @@ public class GameInitTest {
   @Test
   public void shouldInitPlayerTwoAttributes() {
 
-    Game aGame = new Game();
+    Game aGame = new Game(6);
     String name1 = "Manu";
     Player expectedPlayerOne = new Player(name1);
     expectedPlayerOne.setCurrentPlayer(true);
@@ -42,7 +41,7 @@ public class GameInitTest {
 
   @Test
   public void shouldThrowExceptionWithLessThanTwoPlayers() {
-    Game aGame = new Game();
+    Game aGame = new Game(6);
 
     Exception exception1 =
         assertThrows(InstantiationException.class, () -> GameRunner.playGame(new Random(), aGame));
@@ -56,16 +55,16 @@ public class GameInitTest {
         assertThrows(InstantiationException.class, () -> GameRunner.playGame(new Random(), aGame));
 
     String expectedMessage1 =
-        "The valid amount of players is from 2 up to 6. The game had 0 players.";
+        "The valid amount of players is from 2 up to 6. The minimum amount of coins for winning is 3. The game had 0 players and 6 coins for winning.";
     String expectedMessage2 =
-        "The valid amount of players is from 2 up to 6. The game had 1 players.";
+        "The valid amount of players is from 2 up to 6. The minimum amount of coins for winning is 3. The game had 1 players and 6 coins for winning.";
     assertEquals(expectedMessage1, exception1.getMessage());
     assertEquals(expectedMessage2, exception2.getMessage());
   }
 
   @Test
   public void shouldThrowExceptionWithMoreThanSixPlayers() {
-    Game aGame = new Game();
+    Game aGame = new Game(6);
 
     aGame.add("Manu1");
     aGame.add("Manu2");
@@ -79,7 +78,31 @@ public class GameInitTest {
         assertThrows(InstantiationException.class, () -> GameRunner.playGame(new Random(), aGame));
 
     String expectedMessage =
-        "The valid amount of players is from 2 up to 6. The game had 7 players.";
+        "The valid amount of players is from 2 up to 6. The minimum amount of coins for winning is 3. The game had 7 players and 6 coins for winning.";
+    assertEquals(expectedMessage, exception.getMessage());
+  }
+
+  @Test
+  public void shouldInitGameWithMinimumAmountOfCoinsForWinningAndMinimumAmountOfPlayers() {
+    Game aGame = new Game(3);
+    aGame.add("Manu1");
+    aGame.add("Manu2");
+
+    assertTrue(aGame.isPlayable());
+  }
+
+  @Test
+  public void shouldThrowExceptionWhenAmountOfCoinsForWinningIsUnderMinimum() {
+    Game aGame = new Game(2);
+
+    aGame.add("Manu1");
+    aGame.add("Manu2");
+
+    Exception exception =
+        assertThrows(InstantiationException.class, () -> GameRunner.playGame(new Random(), aGame));
+
+    String expectedMessage =
+        "The valid amount of players is from 2 up to 6. The minimum amount of coins for winning is 3. The game had 2 players and 2 coins for winning.";
     assertEquals(expectedMessage, exception.getMessage());
   }
 }

@@ -12,7 +12,7 @@ public class GamePlayTest {
 
   @Test
   public void shouldGoToPenaltyBoxAfterWrongAnswer() {
-    Game aGame = new Game();
+    Game aGame = new Game(6);
 
     String name1 = "Manu";
     Player playerOne = new Player(name1);
@@ -34,7 +34,7 @@ public class GamePlayTest {
 
   @Test
   public void shouldSwitchPlayerAfterWrongAnswer() {
-    Game aGame = new Game();
+    Game aGame = new Game(6);
 
     String name1 = "Manu";
     String name2 = "Pat";
@@ -48,7 +48,7 @@ public class GamePlayTest {
 
   @Test
   public void shouldSwitchPlayerAfterCorrectAnswer() {
-    Game aGame = new Game();
+    Game aGame = new Game(6);
 
     String name1 = "Manu";
     String name2 = "Pat";
@@ -62,7 +62,7 @@ public class GamePlayTest {
 
   @Test
   public void shouldAddCoinAfterCorrectAnswerAndWasNotInPenaltyBox() {
-    Game aGame = new Game();
+    Game aGame = new Game(6);
 
     String name1 = "Manu";
     String name2 = "Pat";
@@ -79,7 +79,7 @@ public class GamePlayTest {
 
   @Test
   public void shouldNotAddCoinWhenInPenaltyBoxAndNotGettingOut() {
-    Game aGame = new Game();
+    Game aGame = new Game(6);
 
     String name1 = "Manu";
     String name2 = "Pat";
@@ -98,7 +98,7 @@ public class GamePlayTest {
 
   @Test
   public void shouldAddCoinWhenInPenaltyBoxAndGettingOut() {
-    Game aGame = new Game();
+    Game aGame = new Game(6);
 
     String name1 = "Manu";
     String name2 = "Pat";
@@ -117,7 +117,7 @@ public class GamePlayTest {
 
   @Test
   public void shouldEndGameWhenPlayerWins() throws InstantiationException {
-    Game aGame = new Game();
+    Game aGame = new Game(6);
 
     String name1 = "Manu";
     String name2 = "Pat";
@@ -132,7 +132,7 @@ public class GamePlayTest {
 
   @Test
   public void shouldGetUsedQuestionCardSummaryAfterAWinnerWasFound() throws InstantiationException {
-    Game aGame = new Game();
+    Game aGame = new Game(6);
 
     String name1 = "Manu";
     String name2 = "Pat";
@@ -151,7 +151,8 @@ public class GamePlayTest {
 
   @Test
   public void shouldFindWinnerWhenPlayerHasMaxCoins() {
-    Game aGame = new Game();
+    int amountOfCoinsForWinning = 6;
+    Game aGame = new Game(amountOfCoinsForWinning);
 
     String name1 = "Manu";
     String name2 = "Pat";
@@ -160,12 +161,12 @@ public class GamePlayTest {
     aGame.add(name2);
 
     Player player = aGame.getCurrentPlayer();
-    player.setAmountOfCoins(Player.MAX_AMOUNT_OF_COINS);
+    player.setAmountOfCoins(amountOfCoinsForWinning);
     assertFalse(aGame.noPlayerHasWon());
   }
   @Test
   public void shouldNotFindWinnerWhenPlayerHasLessThanMaxCoins() {
-    Game aGame = new Game();
+    Game aGame = new Game(6);
 
     String name1 = "Manu";
     String name2 = "Pat";

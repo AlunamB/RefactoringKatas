@@ -21,9 +21,11 @@ public class GameRunner {
   public static void playGame(Random rand, Game aGame) throws InstantiationException {
     if (!aGame.isPlayable()) {
       throw new InstantiationException(
-          "The valid amount of players is from 2 up to 6. The game had "
+          "The valid amount of players is from 2 up to 6. The minimum amount of coins for winning is 3. The game had "
               + aGame.getAmountOfPlayers()
-              + " players.");
+              + " players and "
+              + aGame.getAmountOfCoinsForWinning()
+              + " coins for winning.");
     }
 
     do {
@@ -33,7 +35,7 @@ public class GameRunner {
   }
 
   private static Game initGame() {
-    Game aGame = new Game();
+    Game aGame = new Game(6);
 
     aGame.add("Chet");
     aGame.add("Pat");

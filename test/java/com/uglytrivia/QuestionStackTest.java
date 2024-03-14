@@ -16,7 +16,7 @@ public class QuestionStackTest {
   public void shouldInitQuestionStackForNewGameWithEveryQuestionCategory() {
 
     QuestionCategory[] categories = QuestionCategory.values();
-    Game aGame = new Game();
+    Game aGame = new Game(6);
 
     Map<QuestionCategory, Integer> amounts = aGame.getAmountsOfUsedQuestions();
     assertTrue(amounts.keySet().containsAll(Set.of(categories)));
@@ -24,7 +24,7 @@ public class QuestionStackTest {
 
   @Test
   public void shouldInitQuestionStackForNewGameWithFixedAmountsOfQuestionsPerCategory() {
-    Game aGame = new Game();
+    Game aGame = new Game(6);
 
     Map<QuestionCategory, Integer> amounts = aGame.getAmountsOfOpenQuestions();
     for (QuestionCategory q : amounts.keySet()) {
