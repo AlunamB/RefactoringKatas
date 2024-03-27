@@ -3,6 +3,7 @@ package com.uglytrivia;
 import static org.junit.Assert.*;
 
 import java.util.Random;
+import main.java.com.uglytrivia.AdultPlayer;
 import main.java.com.uglytrivia.Game;
 import main.java.com.uglytrivia.GameRunner;
 import main.java.com.uglytrivia.Player;
@@ -15,13 +16,13 @@ public class GamePlayTest {
     Game aGame = new Game(6);
 
     String name1 = "Manu";
-    Player playerOne = new Player(name1);
+    AdultPlayer playerOne = new AdultPlayer(name1);
     playerOne.setCurrentPlayer(true);
 
     String name2 = "Pat";
 
-    aGame.add(name1);
-    aGame.add(name2);
+    aGame.addAdultPlayer(name1);
+    aGame.addAdultPlayer(name2);
 
     Player playerWithWrongAnswer = aGame.getCurrentPlayer();
     assertEquals(
@@ -39,8 +40,8 @@ public class GamePlayTest {
     String name1 = "Manu";
     String name2 = "Pat";
 
-    aGame.add(name1);
-    aGame.add(name2);
+    aGame.addAdultPlayer(name1);
+    aGame.addAdultPlayer(name2);
 
     aGame.playerAnswersQuestion(7);
     assertEquals(name2, aGame.getCurrentPlayer().getName());
@@ -53,22 +54,22 @@ public class GamePlayTest {
     String name1 = "Manu";
     String name2 = "Pat";
 
-    aGame.add(name1);
-    aGame.add(name2);
+    aGame.addAdultPlayer(name1);
+    aGame.addAdultPlayer(name2);
 
     aGame.playerAnswersQuestion(1);
     assertEquals(name2, aGame.getCurrentPlayer().getName());
   }
 
   @Test
-  public void shouldAddCoinAfterCorrectAnswerAndWasNotInPenaltyBox() {
+  public void shouldAddCoinAfterCorrectAnswerAndWasNotInPenaltyBoxForAdult() {
     Game aGame = new Game(6);
 
     String name1 = "Manu";
     String name2 = "Pat";
 
-    aGame.add(name1);
-    aGame.add(name2);
+    aGame.addAdultPlayer(name1);
+    aGame.addAdultPlayer(name2);
 
     Player player = aGame.getCurrentPlayer();
 
@@ -78,14 +79,31 @@ public class GamePlayTest {
   }
 
   @Test
+  public void shouldAddCoinAfterCorrectAnswerAndWasNotInPenaltyBoxForChild() {
+    Game aGame = new Game(6);
+
+    String name1 = "Manu";
+    String name2 = "Pat";
+
+    aGame.addChildPlayer(name1);
+    aGame.addAdultPlayer(name2);
+
+    Player player = aGame.getCurrentPlayer();
+
+    assertEquals(0, player.getAmountOfCoins());
+    aGame.playerAnswersQuestion(1);
+    assertEquals(2, player.getAmountOfCoins());
+  }
+
+  @Test
   public void shouldNotAddCoinWhenInPenaltyBoxAndNotGettingOut() {
     Game aGame = new Game(6);
 
     String name1 = "Manu";
     String name2 = "Pat";
 
-    aGame.add(name1);
-    aGame.add(name2);
+    aGame.addAdultPlayer(name1);
+    aGame.addAdultPlayer(name2);
 
     Player player = aGame.getCurrentPlayer();
     player.setInPenaltyBox(true);
@@ -103,8 +121,8 @@ public class GamePlayTest {
     String name1 = "Manu";
     String name2 = "Pat";
 
-    aGame.add(name1);
-    aGame.add(name2);
+    aGame.addAdultPlayer(name1);
+    aGame.addAdultPlayer(name2);
 
     Player player = aGame.getCurrentPlayer();
     player.setInPenaltyBox(true);
@@ -122,8 +140,8 @@ public class GamePlayTest {
     String name1 = "Manu";
     String name2 = "Pat";
 
-    aGame.add(name1);
-    aGame.add(name2);
+    aGame.addAdultPlayer(name1);
+    aGame.addAdultPlayer(name2);
     Random randomizer = new Random(123455);
 
     GameRunner.playGame(randomizer, aGame);
@@ -137,8 +155,8 @@ public class GamePlayTest {
     String name1 = "Manu";
     String name2 = "Pat";
 
-    aGame.add(name1);
-    aGame.add(name2);
+    aGame.addAdultPlayer(name1);
+    aGame.addAdultPlayer(name2);
     Random randomizer = new Random(123455);
 
     GameRunner.playGame(randomizer, aGame);
@@ -157,8 +175,8 @@ public class GamePlayTest {
     String name1 = "Manu";
     String name2 = "Pat";
 
-    aGame.add(name1);
-    aGame.add(name2);
+    aGame.addAdultPlayer(name1);
+    aGame.addAdultPlayer(name2);
 
     Player player = aGame.getCurrentPlayer();
     player.setAmountOfCoins(amountOfCoinsForWinning);
@@ -171,8 +189,8 @@ public class GamePlayTest {
     String name1 = "Manu";
     String name2 = "Pat";
 
-    aGame.add(name1);
-    aGame.add(name2);
+    aGame.addAdultPlayer(name1);
+    aGame.addAdultPlayer(name2);
 
     Player player1 = aGame.getCurrentPlayer();
     player1.setAmountOfCoins(0);

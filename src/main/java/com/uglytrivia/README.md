@@ -11,6 +11,8 @@ The code snippets were take from the [linked repository](https://github.com/cara
   the game (after finding a winner).
 * We want to extend the game duration. The amount of coins that is needed to win the game should be configurable. The
   minimum amount of coins is 3.
+* We want to play with different types of players. An adult player gets 1 coins for a correct answer. A child gets 2
+  coins for a correct answer.
 
 ## Future requirements
 

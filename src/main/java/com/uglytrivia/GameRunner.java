@@ -37,9 +37,9 @@ public class GameRunner {
   private static Game initGame() {
     Game aGame = new Game(6);
 
-    aGame.add("Chet");
-    aGame.add("Pat");
-    aGame.add("Sue");
+    aGame.addAdultPlayer("Chet");
+    aGame.addAdultPlayer("Pat");
+    aGame.addAdultPlayer("Sue");
     return aGame;
   }
 }
