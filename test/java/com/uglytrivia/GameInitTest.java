@@ -3,6 +3,7 @@ package com.uglytrivia;
 import static org.junit.Assert.*;
 
 import java.util.Random;
+import main.java.com.uglytrivia.AdultPlayer;
 import main.java.com.uglytrivia.Game;
 import main.java.com.uglytrivia.GameRunner;
 import main.java.com.uglytrivia.Player;
@@ -14,10 +15,10 @@ public class GameInitTest {
 
     Game aGame = new Game(6);
     String name = "Manu";
-    Player expectedPlayerOne = new Player(name);
+    AdultPlayer expectedPlayerOne = new AdultPlayer(name);
     expectedPlayerOne.setCurrentPlayer(true);
 
-    aGame.add(name);
+    aGame.addAdultPlayer(name);
 
     assertEquals(expectedPlayerOne.toString(), aGame.getCurrentPlayer().toString());
   }
@@ -27,14 +28,14 @@ public class GameInitTest {
 
     Game aGame = new Game(6);
     String name1 = "Manu";
-    Player expectedPlayerOne = new Player(name1);
+    Player expectedPlayerOne = new AdultPlayer(name1);
     expectedPlayerOne.setCurrentPlayer(true);
 
     String name2 = "Bob";
-    Player expectedPlayerTwo = new Player(name2);
+    Player expectedPlayerTwo = new AdultPlayer(name2);
 
-    aGame.add(name1);
-    aGame.add(name2);
+    aGame.addAdultPlayer(name1);
+    aGame.addAdultPlayer(name2);
 
     assertEquals(expectedPlayerTwo.toString(), aGame.getNextPlayer().toString());
   }
@@ -47,9 +48,9 @@ public class GameInitTest {
         assertThrows(InstantiationException.class, () -> GameRunner.playGame(new Random(), aGame));
 
     String name1 = "Manu";
-    Player playerOne = new Player(name1);
+    Player playerOne = new AdultPlayer(name1);
     playerOne.setCurrentPlayer(true);
-    aGame.add(name1);
+    aGame.addAdultPlayer(name1);
 
     Exception exception2 =
         assertThrows(InstantiationException.class, () -> GameRunner.playGame(new Random(), aGame));
@@ -66,13 +67,13 @@ public class GameInitTest {
   public void shouldThrowExceptionWithMoreThanSixPlayers() {
     Game aGame = new Game(6);
 
-    aGame.add("Manu1");
-    aGame.add("Manu2");
-    aGame.add("Manu3");
-    aGame.add("Manu4");
-    aGame.add("Manu5");
-    aGame.add("Manu6");
-    aGame.add("Manu7");
+    aGame.addAdultPlayer("Manu1");
+    aGame.addAdultPlayer("Manu2");
+    aGame.addAdultPlayer("Manu3");
+    aGame.addAdultPlayer("Manu4");
+    aGame.addAdultPlayer("Manu5");
+    aGame.addAdultPlayer("Manu6");
+    aGame.addAdultPlayer("Manu7");
 
     Exception exception =
         assertThrows(InstantiationException.class, () -> GameRunner.playGame(new Random(), aGame));
@@ -85,8 +86,8 @@ public class GameInitTest {
   @Test
   public void shouldInitGameWithMinimumAmountOfCoinsForWinningAndMinimumAmountOfPlayers() {
     Game aGame = new Game(3);
-    aGame.add("Manu1");
-    aGame.add("Manu2");
+    aGame.addAdultPlayer("Manu1");
+    aGame.addAdultPlayer("Manu2");
 
     assertTrue(aGame.isPlayable());
   }
@@ -95,8 +96,8 @@ public class GameInitTest {
   public void shouldThrowExceptionWhenAmountOfCoinsForWinningIsUnderMinimum() {
     Game aGame = new Game(2);
 
-    aGame.add("Manu1");
-    aGame.add("Manu2");
+    aGame.addAdultPlayer("Manu1");
+    aGame.addAdultPlayer("Manu2");
 
     Exception exception =
         assertThrows(InstantiationException.class, () -> GameRunner.playGame(new Random(), aGame));

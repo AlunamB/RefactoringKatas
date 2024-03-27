@@ -28,14 +28,27 @@ public class Game {
     return amountOfCoinsForWinning >= 3;
   }
 
-  public void add(String playerName) {
-    playerList.add(new Player(playerName));
+  public void addAdultPlayer(String playerName) {
+    playerList.add(new AdultPlayer(playerName));
+    initFirstPlayer();
+    logAddedPlayer(playerName);
+  }
+
+  public void addChildPlayer(String playerName) {
+    playerList.add(new ChildPlayer(playerName));
+    initFirstPlayer();
+    logAddedPlayer(playerName);
+  }
+
+  private void logAddedPlayer(String playerName) {
+    System.out.println(playerName + " was added");
+    System.out.println("They are player number " + playerList.size());
+  }
+
+  private void initFirstPlayer() {
     if (playerList.size() == 1) {
       playerList.get(0).setCurrentPlayer(true);
     }
-
-    System.out.println(playerName + " was added");
-    System.out.println("They are player number " + playerList.size());
   }
 
   public int getAmountOfPlayers() {

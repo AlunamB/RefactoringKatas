@@ -1,17 +1,8 @@
 package main.java.com.uglytrivia;
 
-public class Player {
+public abstract class Player {
 
-
-
-  public Player(String name) {
-    this.name = name;
-    setAmountOfCoins(0);
-    setPositionOnBoard(0);
-    setInPenaltyBox(false);
-  }
-
-  private final String name;
+  protected String name;
 
   private int amountOfCoins;
 
@@ -22,6 +13,8 @@ public class Player {
   private boolean isGettingOutOfPenaltyBox;
 
   private boolean isCurrentPlayer;
+
+  public abstract void addCoin();
 
   public String toString() {
     return "name:"
@@ -40,11 +33,7 @@ public class Player {
     return this.amountOfCoins == amountOfCoinsForWinning;
   }
 
-  public void addCoin() {
-    System.out.println("Answer was correct!!!!");
-    setAmountOfCoins(getAmountOfCoins() + 1);
-    System.out.println(getName() + " now has " + getAmountOfCoins() + " Gold Coins.");
-  }
+
 
   public void movePlayer(int rolledNumber) {
     setPositionOnBoard(getPositionOnBoard() + rolledNumber);
