@@ -1,8 +1,10 @@
-package main.java.com.uglytrivia;
+package main.java.com.uglytrivia.questionstack;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
+import main.java.com.uglytrivia.QuestionCard;
+import main.java.com.uglytrivia.QuestionCategory;
 
 public abstract class QuestionStack {
 

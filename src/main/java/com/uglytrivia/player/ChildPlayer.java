@@ -1,8 +1,8 @@
-package main.java.com.uglytrivia;
+package main.java.com.uglytrivia.player;
 
-public class AdultPlayer extends Player {
+public class ChildPlayer extends Player {
 
-  public AdultPlayer(String name) {
+  public ChildPlayer(String name) {
     this.name = name;
     setAmountOfCoins(0);
     setPositionOnBoard(0);
@@ -11,7 +11,7 @@ public class AdultPlayer extends Player {
 
   public void addCoin() {
     System.out.println("Answer was correct!!!!");
-    setAmountOfCoins(getAmountOfCoins() + 1);
+    setAmountOfCoins(getAmountOfCoins() + 2);
     System.out.println(getName() + " now has " + getAmountOfCoins() + " Gold Coins.");
   }
 }

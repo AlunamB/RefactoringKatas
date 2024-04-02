@@ -3,10 +3,10 @@ package com.uglytrivia;
 import static org.junit.Assert.*;
 
 import java.util.Random;
-import main.java.com.uglytrivia.AdultPlayer;
 import main.java.com.uglytrivia.Game;
 import main.java.com.uglytrivia.GameRunner;
-import main.java.com.uglytrivia.Player;
+import main.java.com.uglytrivia.player.AdultPlayer;
+import main.java.com.uglytrivia.player.Player;
 import org.junit.Test;
 
 public class GamePlayTest {

@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.Set;
 import main.java.com.uglytrivia.Game;
 import main.java.com.uglytrivia.QuestionCategory;
-import main.java.com.uglytrivia.QuestionStack;
+import main.java.com.uglytrivia.questionstack.QuestionStack;
 import org.junit.Test;
 
 public class QuestionStackTest {

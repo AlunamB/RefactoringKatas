@@ -1,6 +1,11 @@
 package main.java.com.uglytrivia;
 
 import java.util.*;
+import main.java.com.uglytrivia.player.AdultPlayer;
+import main.java.com.uglytrivia.player.ChildPlayer;
+import main.java.com.uglytrivia.player.Player;
+import main.java.com.uglytrivia.questionstack.OpenQuestionStack;
+import main.java.com.uglytrivia.questionstack.UsedQuestionStack;
 
 public class Game {
   public static final int AMOUNT_OF_BOARD_POSITIONS = 12;

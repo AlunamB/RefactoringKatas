@@ -1,6 +1,7 @@
-package main.java.com.uglytrivia;
+package main.java.com.uglytrivia.questionstack;
 
 import java.util.LinkedList;
+import main.java.com.uglytrivia.QuestionCard;
 
 public class UsedQuestionStack extends QuestionStack {
 

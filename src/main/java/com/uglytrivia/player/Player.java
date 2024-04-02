@@ -1,4 +1,6 @@
-package main.java.com.uglytrivia;
+package main.java.com.uglytrivia.player;
+
+import main.java.com.uglytrivia.Game;
 
 public abstract class Player {
 
