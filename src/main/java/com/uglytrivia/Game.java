@@ -8,8 +8,8 @@ public class Game {
 
   private final int amountOfCoinsForWinning;
 
-  private final QuestionStack stackOfOpenQuestions = new QuestionStack();
-  private final QuestionStack stackOfUsedQuestions = new QuestionStack();
+  private final OpenQuestionStack stackOfOpenQuestions = new OpenQuestionStack();
+  private final UsedQuestionStack stackOfUsedQuestions = new UsedQuestionStack();
 
   public Game(int amountOfCoinsForWinning) {
     stackOfOpenQuestions.fillStack();
