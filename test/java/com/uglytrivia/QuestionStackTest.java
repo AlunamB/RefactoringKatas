@@ -31,4 +31,6 @@ public class QuestionStackTest {
       assertEquals(QuestionStack.AMOUNT_QUESTIONS_PER_CATEGORY, amounts.get(q).intValue());
     }
   }
+
+
 }

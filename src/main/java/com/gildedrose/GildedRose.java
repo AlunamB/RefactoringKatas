@@ -128,7 +128,7 @@ public class GildedRose {
   }
 
   private boolean hasExceededMaxQuality(int itemIndex) {
-    return items[itemIndex].quality > 50;
+    return items[itemIndex].quality > MAX_ITEM_QUALITY_NON_LEGENDARY;
   }
 
   private boolean hasPassedSellIn(int itemIndex) {
