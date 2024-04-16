@@ -12,7 +12,7 @@ public class ShoppingCartTest {
     @Test
     public void singleItem_numberOfProductsInTheCart() throws Exception {
         ShoppingCart shoppingCart = new ShoppingCart();
-        shoppingCart.add(10);
+        shoppingCart.add(Arrays.asList(10));
 
         Assert.assertEquals(1, shoppingCart.numberOfProducts());
     }
@@ -29,7 +29,7 @@ public class ShoppingCartTest {
     @Test
     public void singleItem_totalPrice() throws Exception {
         ShoppingCart shoppingCart = new ShoppingCart();
-        shoppingCart.add(10);
+        shoppingCart.add(Arrays.asList(10));
 
         Assert.assertEquals(10, shoppingCart.calculateTotalPrice());
     }
@@ -46,7 +46,7 @@ public class ShoppingCartTest {
     @Test
     public void singleItem_hasDiscountIfContainsAtLeastOneProductWorthAtLeast100() throws Exception {
         ShoppingCart shoppingCart = new ShoppingCart();
-        shoppingCart.add(100);
+        shoppingCart.add(Arrays.asList(100));
 
         Assert.assertTrue(shoppingCart.hasDiscount());
     }
@@ -63,7 +63,7 @@ public class ShoppingCartTest {
     @Test
     public void singleItem_doesNotHaveDiscountIfContainsNoProductsWorthAtLeast100() throws Exception {
         ShoppingCart shoppingCart = new ShoppingCart();
-        shoppingCart.add(99);
+        shoppingCart.add(Arrays.asList(99));
 
         Assert.assertFalse(shoppingCart.hasDiscount());
     }
