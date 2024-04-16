@@ -4,6 +4,8 @@ import main.java.com.parallelchange.field.ImagineThisIsAClientInADifferentReposi
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 public class ImagineThisIsAClientInADifferentRepositoryTest {
 
 
@@ -11,7 +13,14 @@ public class ImagineThisIsAClientInADifferentRepositoryTest {
     public void singleItem_numberOfProductsInTheCart() throws Exception {
         ImagineThisIsAClientInADifferentRepository client = new ImagineThisIsAClientInADifferentRepository();
 
-        Assert.assertEquals("Total price is 50 euro", client.formattedTotalPrice(50));
+        Assert.assertEquals("Total price is 50 euro", client.formattedTotalPrice(Arrays.asList(50)));
     }
+    @Test
+    public void multipleItems_numberOfProductsInTheCart() throws Exception {
+        ImagineThisIsAClientInADifferentRepository client = new ImagineThisIsAClientInADifferentRepository();
+
+        Assert.assertEquals("Total price is 70 euro", client.formattedTotalPrice(Arrays.asList(50, 20)));
+    }
+
 
 }
