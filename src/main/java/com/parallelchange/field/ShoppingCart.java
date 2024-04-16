@@ -6,10 +6,6 @@ import java.util.List;
 public class ShoppingCart {
   private List<Integer> priceList = new ArrayList<>();
 
-  public void add(int price) {
-    this.priceList.add(price);
-  }
-
   public void add(List<Integer> prices) {
     this.priceList.addAll(prices);
   }
