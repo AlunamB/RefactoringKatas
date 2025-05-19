@@ -9,10 +9,13 @@ import main.java.com.gildedrose.GildedRose;
 import main.java.com.gildedrose.Item;
 import main.java.com.greedgame.GreedGame;
 
+import java.util.ArrayList;
+
 public class StepDefinitions {
 
     private int score;
     private GreedGame greedGame;
+    private Exception exception;
 
     @Given("The dice shows {int}")
     public void theDiceShows(int arg0) {
@@ -21,11 +24,28 @@ public class StepDefinitions {
 
     @When("I calculate the score")
     public void iCalculateTheScore() {
-        score = greedGame.score();
+        try{
+            score = greedGame.score();
+        }catch (IllegalArgumentException e) {
+            this.exception = e;
+        }
+
     }
 
     @Then("I should get a score of {int}")
     public void iShouldGetAScoreOf(int expectedScore) {
         assertEquals(score, expectedScore);
+    }
+
+    @Given("No dice has been rolled")
+    public void noDiceHasBeenRolled() {
+        greedGame = new GreedGame(new ArrayList<>());
+    }
+
+    @Then("I should get an Exception that tells me {string}")
+    public void iShouldGetAnExceptionThatTellsMe(String expectedMessage) {
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
     }
 }
