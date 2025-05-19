@@ -12,3 +12,11 @@ Feature: Greed game quality
     Then I should get an Exception that tells me "No dice has been rolled"
     And I should get a score of 0
 
+  Scenario: Checking that multiple dices can be rolled
+    Given The dices show:
+      | 2 |
+      | 2 |
+    When I calculate the score
+    Then I should get a score of 0
+
+

@@ -5,11 +5,9 @@ import static org.junit.Assert.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import main.java.com.gildedrose.GildedRose;
-import main.java.com.gildedrose.Item;
-import main.java.com.greedgame.GreedGame;
-
 import java.util.ArrayList;
+import java.util.List;
+import main.java.com.greedgame.GreedGame;
 
 public class StepDefinitions {
 
@@ -48,4 +46,9 @@ public class StepDefinitions {
 
         assertTrue(actualMessage.contains(expectedMessage));
     }
+
+  @Given("The dices show:")
+  public void theDicesShow(List<Integer> diceRolls) {
+    greedGame = new GreedGame(new ArrayList<>(diceRolls));
+  }
 }
