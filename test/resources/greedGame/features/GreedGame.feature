@@ -19,4 +19,17 @@ Feature: Greed game quality
     When I calculate the score
     Then I should get a score of 0
 
+  Scenario: Checking that an Exception is thrown when more than 6 dices are thrown
+    Given The dices show:
+      | 1 |
+      | 2 |
+      | 3 |
+      | 4 |
+      | 5 |
+      | 6 |
+      | 7 |
+    When I calculate the score
+    Then I should get an Exception that tells me "You rolled 7 dices. The maximum amount of dices is 6."
+    And I should get a score of 0
+
 
