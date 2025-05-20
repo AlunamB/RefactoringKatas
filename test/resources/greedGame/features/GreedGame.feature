@@ -37,4 +37,9 @@ Feature: Greed game quality
     When I calculate the score
     Then I should get a score of 100
 
+  Scenario: Checking the score for a single 5
+    Given The dice shows 5
+    When I calculate the score
+    Then I should get a score of 50
+
 
