@@ -1,39 +1,55 @@
 package main.java.com.greedgame;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class GreedGame {
 
   private static final int MAX_AMOUNT_DICES = 6;
   private static final int INITIAL_SCORE = 0;
-  private static final int SINGLE_ONE_SCORE = 100;
-  private static final int SINGLE_FIVE_SCORE = 50;
 
-    private List diceList = new ArrayList<Integer>();
-    public GreedGame(int diceRoll){
-        this.diceList = new ArrayList(Arrays.asList(diceRoll));
-    }
+  private List<Integer> diceList;
 
-    public GreedGame(ArrayList<Integer> diceRolls){
-        this.diceList = diceRolls;
-    }
+  public GreedGame(int diceRoll) {
+    this.diceList = new ArrayList<>(List.of(diceRoll));
+  }
 
-    public int score(){
-    checkExitCriteriaAndThrowException();
+  public GreedGame(ArrayList<Integer> diceRolls) {
+    this.diceList = diceRolls;
+  }
+
+  private static int calculateScore(List<PatternScore> patternList) {
     int score = INITIAL_SCORE;
-    if (diceList.contains(1)) {
-      score = SINGLE_ONE_SCORE;
-    } else if (diceList.contains(5)) {
-      score = SINGLE_FIVE_SCORE;
+    if (!patternList.isEmpty()) {
+      for (PatternScore ps : patternList) {
+        score = score + ps.getScore();
+      }
     }
     return score;
   }
 
+  public int score() {
+    checkExitCriteriaAndThrowException();
+
+    List<PatternScore> patternList = findPatterns();
+    return calculateScore(patternList);
+  }
+
+  private List<PatternScore> findPatterns() {
+    List<PatternScore> patternList = new ArrayList<>();
+    if (diceList.contains(1)) {
+      patternList.add(PatternScore.SINGLE_ONE);
+      diceList.remove(Integer.valueOf(1));
+    } else if (diceList.contains(5)) {
+      patternList.add(PatternScore.SINGLE_FIVE);
+      diceList.remove(Integer.valueOf(5));
+    }
+    return patternList;
+  }
+
   private void checkExitCriteriaAndThrowException() {
-        if (diceList.isEmpty()){
-            throw new IllegalArgumentException("No dice has been rolled");
+    if (diceList.isEmpty()) {
+      throw new IllegalArgumentException("No dice has been rolled");
     } else if (diceList.size() > MAX_AMOUNT_DICES) {
       throw new IllegalArgumentException(
           "You rolled "
@@ -41,6 +57,6 @@ public class GreedGame {
               + " dices. The maximum amount of dices is "
               + MAX_AMOUNT_DICES
               + ".");
-        }
     }
+  }
 }
