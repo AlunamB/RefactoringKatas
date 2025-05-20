@@ -6,7 +6,9 @@ import java.util.List;
 
 public class GreedGame {
 
-  private final int MAX_AMOUNT_DICES = 6;
+  private static final int MAX_AMOUNT_DICES = 6;
+  private static final int INITIAL_SCORE = 0;
+  private static final int SINGLE_ONE_SCORE = 100;
 
     private List diceList = new ArrayList<Integer>();
     public GreedGame(int diceRoll){
@@ -18,7 +20,15 @@ public class GreedGame {
     }
 
     public int score(){
+    checkExitCriteriaAndThrowException();
+    int score = INITIAL_SCORE;
+    if (diceList.contains(1)) {
+      score = SINGLE_ONE_SCORE;
+    }
+    return score;
+  }
 
+  private void checkExitCriteriaAndThrowException() {
         if (diceList.isEmpty()){
             throw new IllegalArgumentException("No dice has been rolled");
     } else if (diceList.size() > MAX_AMOUNT_DICES) {
@@ -29,6 +39,5 @@ public class GreedGame {
               + MAX_AMOUNT_DICES
               + ".");
         }
-        return 0;
     }
 }

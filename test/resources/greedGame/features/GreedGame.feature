@@ -32,4 +32,9 @@ Feature: Greed game quality
     Then I should get an Exception that tells me "You rolled 7 dices. The maximum amount of dices is 6."
     And I should get a score of 0
 
+  Scenario: Checking the score for a single 1
+    Given The dice shows 1
+    When I calculate the score
+    Then I should get a score of 100
+
 
