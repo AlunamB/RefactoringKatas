@@ -1,7 +1,6 @@
 package main.java.com.greedgame;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class GreedGame {
 
@@ -40,6 +39,16 @@ public class GreedGame {
 
   private List<PatternScore> findPatterns() {
     List<PatternScore> patternList = new ArrayList<>();
+    HashMap<Integer, Integer> amounts = new HashMap<>();
+    for (int i = 1; i < 7; i++) {
+      amounts.put(i, Collections.frequency(diceList, i));
+    }
+
+    if (amounts.get(1) == 3) {
+      patternList.add(PatternScore.TRIPLE_ONE);
+      diceList.removeAll(Arrays.asList(1, 1, 1));
+    }
+
     if (diceList.contains(1)) {
       patternList.add(PatternScore.SINGLE_ONE);
       diceList.remove(Integer.valueOf(1));

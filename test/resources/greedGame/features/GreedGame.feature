@@ -42,4 +42,12 @@ Feature: Greed game quality
     When I calculate the score
     Then I should get a score of 50
 
+  Scenario: Checking the score for a triple 1
+    Given The dices show:
+      | 1 |
+      | 1 |
+      | 1 |
+    When I calculate the score
+    Then I should get a score of 1000
+
 
