@@ -18,21 +18,24 @@ public class GreedGame {
     this.diceList = diceRolls;
   }
 
-  private static int calculateScore(List<PatternScore> patternList) {
-    int score = INITIAL_SCORE;
-    if (!patternList.isEmpty()) {
-      for (PatternScore ps : patternList) {
-        score = score + ps.getScore();
-      }
-    }
-    return score;
-  }
-
   public int score() {
     checkExitCriteriaAndThrowException();
 
     List<PatternScore> patternList = findPatterns();
     return calculateScore(patternList);
+  }
+
+  private void checkExitCriteriaAndThrowException() {
+    if (diceList.isEmpty()) {
+      throw new IllegalArgumentException("No dice has been rolled");
+    } else if (diceList.size() > MAX_AMOUNT_DICES) {
+      throw new IllegalArgumentException(
+          "You rolled "
+              + diceList.size()
+              + " dices. The maximum amount of dices is "
+              + MAX_AMOUNT_DICES
+              + ".");
+    }
   }
 
   private List<PatternScore> findPatterns() {
@@ -47,16 +50,13 @@ public class GreedGame {
     return patternList;
   }
 
-  private void checkExitCriteriaAndThrowException() {
-    if (diceList.isEmpty()) {
-      throw new IllegalArgumentException("No dice has been rolled");
-    } else if (diceList.size() > MAX_AMOUNT_DICES) {
-      throw new IllegalArgumentException(
-          "You rolled "
-              + diceList.size()
-              + " dices. The maximum amount of dices is "
-              + MAX_AMOUNT_DICES
-              + ".");
+  private static int calculateScore(List<PatternScore> patternList) {
+    int score = INITIAL_SCORE;
+    if (!patternList.isEmpty()) {
+      for (PatternScore ps : patternList) {
+        score = score + ps.getScore();
+      }
     }
+    return score;
   }
 }
