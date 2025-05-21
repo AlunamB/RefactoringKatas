@@ -46,15 +46,15 @@ public class GreedGame {
 
     if (amounts.get(1) == 3) {
       patternList.add(PatternScore.TRIPLE_ONE);
-      diceList.removeAll(Arrays.asList(1, 1, 1));
+      diceList.removeAll(PatternScore.TRIPLE_ONE.getPattern());
     }
 
     if (diceList.contains(1)) {
       patternList.add(PatternScore.SINGLE_ONE);
-      diceList.remove(Integer.valueOf(1));
+      diceList.removeAll(PatternScore.SINGLE_ONE.getPattern());
     } else if (diceList.contains(5)) {
       patternList.add(PatternScore.SINGLE_FIVE);
-      diceList.remove(Integer.valueOf(5));
+      diceList.removeAll(PatternScore.SINGLE_FIVE.getPattern());
     }
     return patternList;
   }
