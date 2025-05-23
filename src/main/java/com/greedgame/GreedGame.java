@@ -57,23 +57,10 @@ public class GreedGame {
 
   private void findAndRemoveTriples(
       HashMap<Integer, Integer> amounts, List<PatternScore> patternList) {
-    if (amounts.get(1) == 3) {
-      addPatternAndRemoveFromDiceList(patternList, PatternScore.TRIPLE_ONE);
-    }
-    if (amounts.get(2) == 3) {
-      addPatternAndRemoveFromDiceList(patternList, PatternScore.TRIPLE_TWO);
-    }
-    if (amounts.get(3) == 3) {
-      addPatternAndRemoveFromDiceList(patternList, PatternScore.TRIPLE_THREE);
-    }
-    if (amounts.get(4) == 3) {
-      addPatternAndRemoveFromDiceList(patternList, PatternScore.TRIPLE_FOUR);
-    }
-    if (amounts.get(5) == 3) {
-      addPatternAndRemoveFromDiceList(patternList, PatternScore.TRIPLE_FIVE);
-    }
-    if (amounts.get(6) == 3) {
-      addPatternAndRemoveFromDiceList(patternList, PatternScore.TRIPLE_SIX);
+    for (PatternScore ps : PatternScore.getTriplePatterns()) {
+      if (amounts.get(ps.getPattern().getFirst()) == 3) {
+        addPatternAndRemoveFromDiceList(patternList, ps);
+      }
     }
   }
 

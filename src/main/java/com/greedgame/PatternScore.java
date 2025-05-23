@@ -1,5 +1,6 @@
 package main.java.com.greedgame;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -19,6 +20,16 @@ public enum PatternScore {
   PatternScore(List<Integer> pattern, int score) {
     this.pattern = pattern;
     this.score = score;
+  }
+
+  public static List<PatternScore> getTriplePatterns() {
+    List<PatternScore> tripleList = new ArrayList<>();
+    for (PatternScore ps : PatternScore.values()) {
+      if (ps.getPattern().size() == 3) {
+        tripleList.add(ps);
+      }
+    }
+    return tripleList;
   }
 
   public List<Integer> getPattern() {
