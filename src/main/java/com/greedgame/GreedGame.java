@@ -44,11 +44,7 @@ public class GreedGame {
       amounts.put(i, Collections.frequency(diceList, i));
     }
 
-    if (amounts.get(1) == 3) {
-      addPatternAndRemoveFromDiceList(patternList, PatternScore.TRIPLE_ONE);
-    } else if (amounts.get(2) == 3) {
-      addPatternAndRemoveFromDiceList(patternList, PatternScore.TRIPLE_TWO);
-    }
+    findAndRemoveTriples(amounts, patternList);
 
     if (diceList.contains(1)) {
       addPatternAndRemoveFromDiceList(patternList, PatternScore.SINGLE_ONE);
@@ -57,6 +53,28 @@ public class GreedGame {
       addPatternAndRemoveFromDiceList(patternList, PatternScore.SINGLE_FIVE);
     }
     return patternList;
+  }
+
+  private void findAndRemoveTriples(
+      HashMap<Integer, Integer> amounts, List<PatternScore> patternList) {
+    if (amounts.get(1) == 3) {
+      addPatternAndRemoveFromDiceList(patternList, PatternScore.TRIPLE_ONE);
+    }
+    if (amounts.get(2) == 3) {
+      addPatternAndRemoveFromDiceList(patternList, PatternScore.TRIPLE_TWO);
+    }
+    if (amounts.get(3) == 3) {
+      addPatternAndRemoveFromDiceList(patternList, PatternScore.TRIPLE_THREE);
+    }
+    if (amounts.get(4) == 3) {
+      addPatternAndRemoveFromDiceList(patternList, PatternScore.TRIPLE_FOUR);
+    }
+    if (amounts.get(5) == 3) {
+      addPatternAndRemoveFromDiceList(patternList, PatternScore.TRIPLE_FIVE);
+    }
+    if (amounts.get(6) == 3) {
+      addPatternAndRemoveFromDiceList(patternList, PatternScore.TRIPLE_SIX);
+    }
   }
 
   private void addPatternAndRemoveFromDiceList(

@@ -57,3 +57,35 @@ Feature: Greed game quality
       | 2 |
     When I calculate the score
     Then I should get a score of 200
+
+  Scenario: Checking the score for a triple 3
+    Given The dices show:
+      | 3 |
+      | 3 |
+      | 3 |
+    When I calculate the score
+    Then I should get a score of 300
+
+  Scenario: Checking the score for a triple 4
+    Given The dices show:
+      | 4 |
+      | 4 |
+      | 4 |
+    When I calculate the score
+    Then I should get a score of 400
+
+  Scenario: Checking the score for a triple 5
+    Given The dices show:
+      | 5 |
+      | 5 |
+      | 5 |
+    When I calculate the score
+    Then I should get a score of 500
+
+  Scenario: Checking the score for a triple 6
+    Given The dices show:
+      | 6 |
+      | 6 |
+      | 6 |
+    When I calculate the score
+    Then I should get a score of 600

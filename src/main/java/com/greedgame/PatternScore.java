@@ -7,7 +7,11 @@ public enum PatternScore {
   SINGLE_ONE(List.of(1), 100),
   SINGLE_FIVE(List.of(5), 50),
   TRIPLE_ONE(Arrays.asList(1, 1, 1), 1000),
-  TRIPLE_TWO(Arrays.asList(2, 2, 2), 200);
+  TRIPLE_TWO(Arrays.asList(2, 2, 2), 200),
+  TRIPLE_THREE(Arrays.asList(3, 3, 3), 300),
+  TRIPLE_FOUR(Arrays.asList(4, 4, 4), 400),
+  TRIPLE_FIVE(Arrays.asList(5, 5, 5), 500),
+  TRIPLE_SIX(Arrays.asList(6, 6, 6), 600);
 
   private final List<Integer> pattern;
   private final int score;
