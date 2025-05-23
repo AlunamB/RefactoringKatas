@@ -44,6 +44,7 @@ public class GreedGame {
       amounts.put(i, Collections.frequency(diceList, i));
     }
 
+    findAndRemoveQuadruplets(amounts, patternList);
     findAndRemoveTriples(amounts, patternList);
 
     if (diceList.contains(1)) {
@@ -53,6 +54,15 @@ public class GreedGame {
       addPatternAndRemoveFromDiceList(patternList, PatternScore.SINGLE_FIVE);
     }
     return patternList;
+  }
+
+  private void findAndRemoveQuadruplets(
+      HashMap<Integer, Integer> amounts, List<PatternScore> patternList) {
+    for (PatternScore ps : PatternScore.getQuadrupletPatterns()) {
+      if (amounts.get(ps.getPattern().getFirst()) == 4) {
+        addPatternAndRemoveFromDiceList(patternList, ps);
+      }
+    }
   }
 
   private void findAndRemoveTriples(

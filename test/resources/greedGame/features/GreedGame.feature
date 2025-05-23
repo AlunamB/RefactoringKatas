@@ -89,3 +89,57 @@ Feature: Greed game quality
       | 6 |
     When I calculate the score
     Then I should get a score of 600
+
+  Scenario: Checking the score for a quadruple 1
+    Given The dices show:
+      | 1 |
+      | 1 |
+      | 1 |
+      | 1 |
+    When I calculate the score
+    Then I should get a score of 2000
+
+  Scenario: Checking the score for a quadruple 2
+    Given The dices show:
+      | 2 |
+      | 2 |
+      | 2 |
+      | 2 |
+    When I calculate the score
+    Then I should get a score of 400
+
+  Scenario: Checking the score for a quadruple 3
+    Given The dices show:
+      | 3 |
+      | 3 |
+      | 3 |
+      | 3 |
+    When I calculate the score
+    Then I should get a score of 600
+
+  Scenario: Checking the score for a quadruple 4
+    Given The dices show:
+      | 4 |
+      | 4 |
+      | 4 |
+      | 4 |
+    When I calculate the score
+    Then I should get a score of 800
+
+  Scenario: Checking the score for a quadruple 5
+    Given The dices show:
+      | 5 |
+      | 5 |
+      | 5 |
+      | 5 |
+    When I calculate the score
+    Then I should get a score of 1000
+
+  Scenario: Checking the score for a quadruple 6
+    Given The dices show:
+      | 6 |
+      | 6 |
+      | 6 |
+      | 6 |
+    When I calculate the score
+    Then I should get a score of 1200

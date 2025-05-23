@@ -7,12 +7,20 @@ import java.util.List;
 public enum PatternScore {
   SINGLE_ONE(List.of(1), 100),
   SINGLE_FIVE(List.of(5), 50),
+
   TRIPLE_ONE(Arrays.asList(1, 1, 1), 1000),
   TRIPLE_TWO(Arrays.asList(2, 2, 2), 200),
   TRIPLE_THREE(Arrays.asList(3, 3, 3), 300),
   TRIPLE_FOUR(Arrays.asList(4, 4, 4), 400),
   TRIPLE_FIVE(Arrays.asList(5, 5, 5), 500),
-  TRIPLE_SIX(Arrays.asList(6, 6, 6), 600);
+  TRIPLE_SIX(Arrays.asList(6, 6, 6), 600),
+
+  QUADRUPLET_ONE(Arrays.asList(1, 1, 1, 1), 2000),
+  QUADRUPLET_TWO(Arrays.asList(2, 2, 2, 2), 400),
+  QUADRUPLET_THREE(Arrays.asList(3, 3, 3, 3), 600),
+  QUADRUPLET_FOUR(Arrays.asList(4, 4, 4, 4), 800),
+  QUADRUPLET_FIVE(Arrays.asList(5, 5, 5, 5), 1000),
+  QUADRUPLET_SIX(Arrays.asList(6, 6, 6, 6), 1200);
 
   private final List<Integer> pattern;
   private final int score;
@@ -30,6 +38,16 @@ public enum PatternScore {
       }
     }
     return tripleList;
+  }
+
+  public static List<PatternScore> getQuadrupletPatterns() {
+    List<PatternScore> quadList = new ArrayList<>();
+    for (PatternScore ps : PatternScore.values()) {
+      if (ps.getPattern().size() == 4) {
+        quadList.add(ps);
+      }
+    }
+    return quadList;
   }
 
   public List<Integer> getPattern() {
