@@ -45,21 +45,24 @@ public class GreedGame {
     }
 
     if (amounts.get(1) == 3) {
-      patternList.add(PatternScore.TRIPLE_ONE);
-      diceList.removeAll(PatternScore.TRIPLE_ONE.getPattern());
+      addPatternAndRemoveFromDiceList(patternList, PatternScore.TRIPLE_ONE);
     } else if (amounts.get(2) == 3) {
-      patternList.add(PatternScore.TRIPLE_TWO);
-      diceList.removeAll(PatternScore.TRIPLE_TWO.getPattern());
+      addPatternAndRemoveFromDiceList(patternList, PatternScore.TRIPLE_TWO);
     }
 
     if (diceList.contains(1)) {
-      patternList.add(PatternScore.SINGLE_ONE);
-      diceList.removeAll(PatternScore.SINGLE_ONE.getPattern());
-    } else if (diceList.contains(5)) {
-      patternList.add(PatternScore.SINGLE_FIVE);
-      diceList.removeAll(PatternScore.SINGLE_FIVE.getPattern());
+      addPatternAndRemoveFromDiceList(patternList, PatternScore.SINGLE_ONE);
+    }
+    if (diceList.contains(5)) {
+      addPatternAndRemoveFromDiceList(patternList, PatternScore.SINGLE_FIVE);
     }
     return patternList;
+  }
+
+  private void addPatternAndRemoveFromDiceList(
+      List<PatternScore> patternList, PatternScore pattern) {
+    patternList.add(pattern);
+    diceList.removeAll(pattern.getPattern());
   }
 
   private static int calculateScore(List<PatternScore> patternList) {
