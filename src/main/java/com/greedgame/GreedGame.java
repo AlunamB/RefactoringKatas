@@ -47,6 +47,9 @@ public class GreedGame {
     if (amounts.get(1) == 3) {
       patternList.add(PatternScore.TRIPLE_ONE);
       diceList.removeAll(PatternScore.TRIPLE_ONE.getPattern());
+    } else if (amounts.get(2) == 3) {
+      patternList.add(PatternScore.TRIPLE_TWO);
+      diceList.removeAll(PatternScore.TRIPLE_TWO.getPattern());
     }
 
     if (diceList.contains(1)) {

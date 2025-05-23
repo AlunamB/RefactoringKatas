@@ -6,7 +6,8 @@ import java.util.List;
 public enum PatternScore {
   SINGLE_ONE(List.of(1), 100),
   SINGLE_FIVE(List.of(5), 50),
-  TRIPLE_ONE(Arrays.asList(1, 1, 1), 1000);
+  TRIPLE_ONE(Arrays.asList(1, 1, 1), 1000),
+  TRIPLE_TWO(Arrays.asList(2, 2, 2), 200);
 
   private final List<Integer> pattern;
   private final int score;
