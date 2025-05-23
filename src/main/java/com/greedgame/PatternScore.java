@@ -5,49 +5,41 @@ import java.util.Arrays;
 import java.util.List;
 
 public enum PatternScore {
-  SINGLE_ONE(List.of(1), 100),
-  SINGLE_FIVE(List.of(5), 50),
+  SINGLE_ONE(List.of(1), 100, false),
+  SINGLE_FIVE(List.of(5), 50, false),
 
-  TRIPLE_ONE(Arrays.asList(1, 1, 1), 1000),
-  TRIPLE_TWO(Arrays.asList(2, 2, 2), 200),
-  TRIPLE_THREE(Arrays.asList(3, 3, 3), 300),
-  TRIPLE_FOUR(Arrays.asList(4, 4, 4), 400),
-  TRIPLE_FIVE(Arrays.asList(5, 5, 5), 500),
-  TRIPLE_SIX(Arrays.asList(6, 6, 6), 600),
+  TRIPLE_ONE(Arrays.asList(1, 1, 1), 1000, true),
+  TRIPLE_TWO(Arrays.asList(2, 2, 2), 200, true),
+  TRIPLE_THREE(Arrays.asList(3, 3, 3), 300, true),
+  TRIPLE_FOUR(Arrays.asList(4, 4, 4), 400, true),
+  TRIPLE_FIVE(Arrays.asList(5, 5, 5), 500, true),
+  TRIPLE_SIX(Arrays.asList(6, 6, 6), 600, true),
 
-  QUADRUPLET_ONE(Arrays.asList(1, 1, 1, 1), 2000),
-  QUADRUPLET_TWO(Arrays.asList(2, 2, 2, 2), 400),
-  QUADRUPLET_THREE(Arrays.asList(3, 3, 3, 3), 600),
-  QUADRUPLET_FOUR(Arrays.asList(4, 4, 4, 4), 800),
-  QUADRUPLET_FIVE(Arrays.asList(5, 5, 5, 5), 1000),
-  QUADRUPLET_SIX(Arrays.asList(6, 6, 6, 6), 1200);
+  QUADRUPLET_ONE(Arrays.asList(1, 1, 1, 1), 2000, true),
+  QUADRUPLET_TWO(Arrays.asList(2, 2, 2, 2), 400, true),
+  QUADRUPLET_THREE(Arrays.asList(3, 3, 3, 3), 600, true),
+  QUADRUPLET_FOUR(Arrays.asList(4, 4, 4, 4), 800, true),
+  QUADRUPLET_FIVE(Arrays.asList(5, 5, 5, 5), 1000, true),
+  QUADRUPLET_SIX(Arrays.asList(6, 6, 6, 6), 1200, true);
 
   private final List<Integer> pattern;
   private final int score;
+  private final boolean multiples;
 
-  PatternScore(List<Integer> pattern, int score) {
+  PatternScore(List<Integer> pattern, int score, boolean multiples) {
     this.pattern = pattern;
     this.score = score;
+    this.multiples = multiples;
   }
 
-  public static List<PatternScore> getTriplePatterns() {
-    List<PatternScore> tripleList = new ArrayList<>();
+  public static List<PatternScore> getMultiplesPatterns(int multipleFactor) {
+    List<PatternScore> multiplePatternList = new ArrayList<>();
     for (PatternScore ps : PatternScore.values()) {
-      if (ps.getPattern().size() == 3) {
-        tripleList.add(ps);
+      if (ps.getPattern().size() == multipleFactor && ps.isMultiple()) {
+        multiplePatternList.add(ps);
       }
     }
-    return tripleList;
-  }
-
-  public static List<PatternScore> getQuadrupletPatterns() {
-    List<PatternScore> quadList = new ArrayList<>();
-    for (PatternScore ps : PatternScore.values()) {
-      if (ps.getPattern().size() == 4) {
-        quadList.add(ps);
-      }
-    }
-    return quadList;
+    return multiplePatternList;
   }
 
   public List<Integer> getPattern() {
@@ -56,5 +48,9 @@ public enum PatternScore {
 
   public int getScore() {
     return score;
+  }
+
+  public boolean isMultiple() {
+    return multiples;
   }
 }

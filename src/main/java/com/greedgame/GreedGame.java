@@ -58,7 +58,7 @@ public class GreedGame {
 
   private void findAndRemoveQuadruplets(
       HashMap<Integer, Integer> amounts, List<PatternScore> patternList) {
-    for (PatternScore ps : PatternScore.getQuadrupletPatterns()) {
+    for (PatternScore ps : PatternScore.getMultiplesPatterns(4)) {
       if (amounts.get(ps.getPattern().getFirst()) == 4) {
         addPatternAndRemoveFromDiceList(patternList, ps);
       }
@@ -67,7 +67,7 @@ public class GreedGame {
 
   private void findAndRemoveTriples(
       HashMap<Integer, Integer> amounts, List<PatternScore> patternList) {
-    for (PatternScore ps : PatternScore.getTriplePatterns()) {
+    for (PatternScore ps : PatternScore.getMultiplesPatterns(3)) {
       if (amounts.get(ps.getPattern().getFirst()) == 3) {
         addPatternAndRemoveFromDiceList(patternList, ps);
       }
