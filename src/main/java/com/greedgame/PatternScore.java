@@ -36,7 +36,8 @@ public enum PatternScore {
   SEXTUPLET_FIVE(Arrays.asList(5, 5, 5, 5, 5, 5), 4000, true),
   SEXTUPLET_SIX(Arrays.asList(6, 6, 6, 6, 6, 6), 4800, true),
 
-  STRAIGHT(Arrays.asList(1, 2, 3, 4, 5, 6), 1200, false);
+  STRAIGHT(Arrays.asList(1, 2, 3, 4, 5, 6), 1200, false),
+  THREE_PAIRS(List.of(), 800, false);
 
   private final List<Integer> pattern;
   private final int score;

@@ -44,23 +44,37 @@ public class GreedGame {
       amounts.put(i, Collections.frequency(diceList, i));
     }
 
+    findAndRemoveMultiples(amounts, patternList);
+    findAndRemoveMixedValuePatterns(amounts, patternList);
+    findAndRemoveSingleValuePatterns(patternList);
+    return patternList;
+  }
+
+  private void findAndRemoveMultiples(
+      HashMap<Integer, Integer> amounts, List<PatternScore> patternList) {
     findAndRemoveSextuplets(amounts, patternList);
     findAndRemoveQuintuplets(amounts, patternList);
     findAndRemoveQuadruplets(amounts, patternList);
     findAndRemoveTriples(amounts, patternList);
+  }
 
-    int amountOfPairs = getAmountOfPairs(amounts);
-    if (amountOfPairs == 0 && diceList.size() == 6) {
+  private void findAndRemoveMixedValuePatterns(
+      HashMap<Integer, Integer> amounts, List<PatternScore> patternList) {
+    List<Integer> pairNumbers = getPairNumbers(amounts);
+    if (pairNumbers.isEmpty() && diceList.size() == 6) {
       addPatternAndRemoveFromDiceList(patternList, PatternScore.STRAIGHT);
+    } else if (pairNumbers.size() == 3 && diceList.size() == 6) {
+      addPatternAndRemovePairsFromDiceList(patternList, PatternScore.THREE_PAIRS, pairNumbers);
     }
+  }
 
+  private void findAndRemoveSingleValuePatterns(List<PatternScore> patternList) {
     if (diceList.contains(1)) {
       addPatternAndRemoveFromDiceList(patternList, PatternScore.SINGLE_ONE);
     }
     if (diceList.contains(5)) {
       addPatternAndRemoveFromDiceList(patternList, PatternScore.SINGLE_FIVE);
     }
-    return patternList;
   }
 
   private void findAndRemoveSextuplets(
@@ -92,20 +106,30 @@ public class GreedGame {
     }
   }
 
-  private int getAmountOfPairs(HashMap<Integer, Integer> amounts) {
-    int amountOfPairs = 0;
-    for (int amount : amounts.values()) {
-      if (amount == 2) {
-        amountOfPairs++;
+  private List<Integer> getPairNumbers(HashMap<Integer, Integer> amounts) {
+    List<Integer> pairNumbers = new ArrayList<>();
+    for (int diceValue : amounts.keySet()) {
+      if (amounts.get(diceValue) == 2) {
+        pairNumbers.add(diceValue);
       }
     }
-    return amountOfPairs;
+    return pairNumbers;
   }
 
   private void addPatternAndRemoveFromDiceList(
       List<PatternScore> patternList, PatternScore pattern) {
     patternList.add(pattern);
     diceList.removeAll(pattern.getPattern());
+  }
+
+  private void addPatternAndRemovePairsFromDiceList(
+      List<PatternScore> patternList, PatternScore pattern, List<Integer> pairNumbers) {
+    patternList.add(pattern);
+
+    List<Integer> listOfPairValues = new ArrayList<>(pairNumbers);
+    listOfPairValues.addAll(pairNumbers);
+
+    diceList.removeAll(listOfPairValues);
   }
 
   private static int calculateScore(List<PatternScore> patternList) {

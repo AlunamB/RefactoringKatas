@@ -281,3 +281,14 @@ Feature: Greed game quality
       | 1 |
     When I calculate the score
     Then I should get a score of 1200
+
+  Scenario: Checking the score for three pairs
+    Given The dices show:
+      | 1 |
+      | 1 |
+      | 3 |
+      | 3 |
+      | 4 |
+      | 4 |
+    When I calculate the score
+    Then I should get a score of 800
