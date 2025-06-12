@@ -143,3 +143,63 @@ Feature: Greed game quality
       | 6 |
     When I calculate the score
     Then I should get a score of 1200
+
+  Scenario: Checking the score for a quintuple 1
+    Given The dices show:
+      | 1 |
+      | 1 |
+      | 1 |
+      | 1 |
+      | 1 |
+    When I calculate the score
+    Then I should get a score of 4000
+
+  Scenario: Checking the score for a quintuple 2
+    Given The dices show:
+      | 2 |
+      | 2 |
+      | 2 |
+      | 2 |
+      | 2 |
+    When I calculate the score
+    Then I should get a score of 800
+
+  Scenario: Checking the score for a quintuple 3
+    Given The dices show:
+      | 3 |
+      | 3 |
+      | 3 |
+      | 3 |
+      | 3 |
+    When I calculate the score
+    Then I should get a score of 1200
+
+  Scenario: Checking the score for a quintuple 4
+    Given The dices show:
+      | 4 |
+      | 4 |
+      | 4 |
+      | 4 |
+      | 4 |
+    When I calculate the score
+    Then I should get a score of 1600
+
+  Scenario: Checking the score for a quintuple 5
+    Given The dices show:
+      | 5 |
+      | 5 |
+      | 5 |
+      | 5 |
+      | 5 |
+    When I calculate the score
+    Then I should get a score of 2000
+
+  Scenario: Checking the score for a quintuple 6
+    Given The dices show:
+      | 6 |
+      | 6 |
+      | 6 |
+      | 6 |
+      | 6 |
+    When I calculate the score
+    Then I should get a score of 2400

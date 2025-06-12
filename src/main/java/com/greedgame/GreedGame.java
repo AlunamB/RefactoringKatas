@@ -44,6 +44,7 @@ public class GreedGame {
       amounts.put(i, Collections.frequency(diceList, i));
     }
 
+    findAndRemoveQuintuplets(amounts, patternList);
     findAndRemoveQuadruplets(amounts, patternList);
     findAndRemoveTriples(amounts, patternList);
 
@@ -56,19 +57,25 @@ public class GreedGame {
     return patternList;
   }
 
+  private void findAndRemoveQuintuplets(
+      HashMap<Integer, Integer> amounts, List<PatternScore> patternList) {
+    findAndRemoveMultipleOfSize(5, amounts, patternList);
+  }
+
   private void findAndRemoveQuadruplets(
       HashMap<Integer, Integer> amounts, List<PatternScore> patternList) {
-    for (PatternScore ps : PatternScore.getMultiplesPatterns(4)) {
-      if (amounts.get(ps.getPattern().getFirst()) == 4) {
-        addPatternAndRemoveFromDiceList(patternList, ps);
-      }
-    }
+    findAndRemoveMultipleOfSize(4, amounts, patternList);
   }
 
   private void findAndRemoveTriples(
       HashMap<Integer, Integer> amounts, List<PatternScore> patternList) {
-    for (PatternScore ps : PatternScore.getMultiplesPatterns(3)) {
-      if (amounts.get(ps.getPattern().getFirst()) == 3) {
+    findAndRemoveMultipleOfSize(3, amounts, patternList);
+  }
+
+  private void findAndRemoveMultipleOfSize(
+      int multipleFactor, HashMap<Integer, Integer> amounts, List<PatternScore> patternList) {
+    for (PatternScore ps : PatternScore.getMultiplesPatterns(multipleFactor)) {
+      if (amounts.get(ps.getPattern().getFirst()) == multipleFactor) {
         addPatternAndRemoveFromDiceList(patternList, ps);
       }
     }
