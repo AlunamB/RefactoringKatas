@@ -44,6 +44,7 @@ public class GreedGame {
       amounts.put(i, Collections.frequency(diceList, i));
     }
 
+    findAndRemoveSextuplets(amounts, patternList);
     findAndRemoveQuintuplets(amounts, patternList);
     findAndRemoveQuadruplets(amounts, patternList);
     findAndRemoveTriples(amounts, patternList);
@@ -55,6 +56,11 @@ public class GreedGame {
       addPatternAndRemoveFromDiceList(patternList, PatternScore.SINGLE_FIVE);
     }
     return patternList;
+  }
+
+  private void findAndRemoveSextuplets(
+      HashMap<Integer, Integer> amounts, List<PatternScore> patternList) {
+    findAndRemoveMultipleOfSize(6, amounts, patternList);
   }
 
   private void findAndRemoveQuintuplets(

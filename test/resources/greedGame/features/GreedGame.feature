@@ -203,3 +203,69 @@ Feature: Greed game quality
       | 6 |
     When I calculate the score
     Then I should get a score of 2400
+
+  Scenario: Checking the score for a sextuple 1
+    Given The dices show:
+      | 1 |
+      | 1 |
+      | 1 |
+      | 1 |
+      | 1 |
+      | 1 |
+    When I calculate the score
+    Then I should get a score of 8000
+
+  Scenario: Checking the score for a sextuple 2
+    Given The dices show:
+      | 2 |
+      | 2 |
+      | 2 |
+      | 2 |
+      | 2 |
+      | 2 |
+    When I calculate the score
+    Then I should get a score of 1600
+
+  Scenario: Checking the score for a sextuple 3
+    Given The dices show:
+      | 3 |
+      | 3 |
+      | 3 |
+      | 3 |
+      | 3 |
+      | 3 |
+    When I calculate the score
+    Then I should get a score of 2400
+
+  Scenario: Checking the score for a sextuple 4
+    Given The dices show:
+      | 4 |
+      | 4 |
+      | 4 |
+      | 4 |
+      | 4 |
+      | 4 |
+    When I calculate the score
+    Then I should get a score of 3200
+
+  Scenario: Checking the score for a sextuple 5
+    Given The dices show:
+      | 5 |
+      | 5 |
+      | 5 |
+      | 5 |
+      | 5 |
+      | 5 |
+    When I calculate the score
+    Then I should get a score of 4000
+
+  Scenario: Checking the score for a sextuple 6
+    Given The dices show:
+      | 6 |
+      | 6 |
+      | 6 |
+      | 6 |
+      | 6 |
+      | 6 |
+    When I calculate the score
+    Then I should get a score of 4800

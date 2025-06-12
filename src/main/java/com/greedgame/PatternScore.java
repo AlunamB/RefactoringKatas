@@ -27,7 +27,14 @@ public enum PatternScore {
   QUINTUPLET_THREE(Arrays.asList(3, 3, 3, 3, 3), 1200, true),
   QUINTUPLET_FOUR(Arrays.asList(4, 4, 4, 4, 4), 1600, true),
   QUINTUPLET_FIVE(Arrays.asList(5, 5, 5, 5, 5), 2000, true),
-  QUINTUPLET_SIX(Arrays.asList(6, 6, 6, 6, 6), 2400, true);
+  QUINTUPLET_SIX(Arrays.asList(6, 6, 6, 6, 6), 2400, true),
+
+  SEXTUPLET_ONE(Arrays.asList(1, 1, 1, 1, 1, 1), 8000, true),
+  SEXTUPLET_TWO(Arrays.asList(2, 2, 2, 2, 2, 2), 1600, true),
+  SEXTUPLET_THREE(Arrays.asList(3, 3, 3, 3, 3, 3), 2400, true),
+  SEXTUPLET_FOUR(Arrays.asList(4, 4, 4, 4, 4, 4), 3200, true),
+  SEXTUPLET_FIVE(Arrays.asList(5, 5, 5, 5, 5, 5), 4000, true),
+  SEXTUPLET_SIX(Arrays.asList(6, 6, 6, 6, 6, 6), 4800, true);
 
   private final List<Integer> pattern;
   private final int score;
