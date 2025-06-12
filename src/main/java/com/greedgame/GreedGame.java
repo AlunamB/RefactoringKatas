@@ -49,6 +49,11 @@ public class GreedGame {
     findAndRemoveQuadruplets(amounts, patternList);
     findAndRemoveTriples(amounts, patternList);
 
+    int amountOfPairs = getAmountOfPairs(amounts);
+    if (amountOfPairs == 0 && diceList.size() == 6) {
+      addPatternAndRemoveFromDiceList(patternList, PatternScore.STRAIGHT);
+    }
+
     if (diceList.contains(1)) {
       addPatternAndRemoveFromDiceList(patternList, PatternScore.SINGLE_ONE);
     }
@@ -85,6 +90,16 @@ public class GreedGame {
         addPatternAndRemoveFromDiceList(patternList, ps);
       }
     }
+  }
+
+  private int getAmountOfPairs(HashMap<Integer, Integer> amounts) {
+    int amountOfPairs = 0;
+    for (int amount : amounts.values()) {
+      if (amount == 2) {
+        amountOfPairs++;
+      }
+    }
+    return amountOfPairs;
   }
 
   private void addPatternAndRemoveFromDiceList(

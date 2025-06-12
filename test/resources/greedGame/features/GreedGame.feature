@@ -269,3 +269,15 @@ Feature: Greed game quality
       | 6 |
     When I calculate the score
     Then I should get a score of 4800
+
+
+  Scenario: Checking the score for a straight
+    Given The dices show:
+      | 6 |
+      | 5 |
+      | 4 |
+      | 3 |
+      | 2 |
+      | 1 |
+    When I calculate the score
+    Then I should get a score of 1200
